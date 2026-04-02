@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import ProductCard from "./product-card";
-import ProductDetailOverlay from "./product-detail-view";
 
 const products = [
   {
@@ -157,11 +156,11 @@ const FeaturedSection = () => {
         ))}
       </div>
 
-      <ProductDetailOverlay
+      {/* <ProductDetailOverlay
         isOpen={!!selectedProduct}
         onClose={() => setSelectedProduct(null)}
         product={selectedProduct || products[0]}
-      />
+      /> */}
     </section>
   );
 };
