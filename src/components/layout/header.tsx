@@ -17,7 +17,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 p-6">
+    <header className="fixed top-0 left-0 right-0 z-50 p-6 backdrop-blur-md bg-[#fdfcfb]/80 border-b-2 border-transparent hover:border-black/5 transition-all">
       <nav className="mx-auto flex items-center justify-between px-2 md:px-20">
         <Link href="/">
           <div className="font-shrikhand text-3xl md:text-4xl text-black select-none">

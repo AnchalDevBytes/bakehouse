@@ -2,13 +2,9 @@
 import { useState, useRef, useEffect } from "react";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi2";
 import ProductCard from "./product-card";
-import ProductDetailOverlay from "./product-detail-view";
 import products from "@/helpers/data.json";
 
 const NewArrivals = () => {
-  const [selectedProduct, setSelectedProduct] = useState<
-    (typeof products)[0] | null
-  >(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -66,6 +62,7 @@ const NewArrivals = () => {
             }`}
           >
             <ProductCard
+              id={product.id}
               name={product.name}
               image={product.image}
               ingredients={product.ingredients}
@@ -73,7 +70,6 @@ const NewArrivals = () => {
               calories={product.calories}
               protein={product.protein}
               bgColor={product.bgColor}
-              onClick={() => setSelectedProduct(product)}
             />
           </div>
         ))}
@@ -106,12 +102,6 @@ const NewArrivals = () => {
           </button>
         </div>
       </div>
-
-      <ProductDetailOverlay
-        isOpen={!!selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-        product={selectedProduct || products[0]}
-      />
     </section>
   );
 };

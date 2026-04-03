@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="py-24 md:py-32 px-2 md:px-20">
+    <section className="py-24 md:py-32 px-2 lg:px-20">
       <div className="grid grid-cols-7 grid-rows-7 gap-2 md:gap-5 h-[400px] sm:h-[600px] md:h-[950px]">
         <Card
           bgColor="bg-[#2a1b15]"
@@ -81,7 +81,7 @@ const HeroSection = () => {
           <p className="text-[8px] md:text-sm opacity-70 font-bold tracking-tighter md:tracking-widest uppercase">
             Main St.
           </p>
-          <div className="relative w-full aspect-square md:aspect-2/1 mt-1 md:mt-4">
+          <div className="relative w-full aspect-square lg:aspect-2/1 mt-1 md:mt-4">
             <Image
               src={`/girl-with-donut.png`}
               alt="Girl with cookie"
@@ -95,7 +95,7 @@ const HeroSection = () => {
           bgColor="bg-[#ff718b]"
           className="col-span-2 row-span-4 flex flex-col items-center text-center text-white p-3 sm:p-5 md:p-10"
         >
-          <h3 className="font-shrikhand text-sm sm:text-3xl md:text-6xl leading-none">
+          <h3 className="font-shrikhand text-sm sm:text-3xl md:text-4xl lg:text-6xl leading-none">
             Everyday
           </h3>
           <p className="text-[8px] md:text-sm opacity-80 mb-2 md:mb-6 font-bold tracking-tighter md:tracking-widest uppercase">

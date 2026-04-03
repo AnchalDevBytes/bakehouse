@@ -11,7 +11,25 @@
     "calories": "450",
     "protein": "6G",
     "carbs": "58G",
-    "bgColor": "#ff89c1"
+    "bgColor": "#ff89c1",
+    "sizes": [
+      {
+        "label": "Large",
+        "price": "850"
+      },
+      {
+        "label": "Small",
+        "price": "650"
+      },
+      {
+        "label": "Large-Egg Free",
+        "price": "900"
+      },
+      {
+        "label": "Small- Egg Free",
+        "price": "700"
+      }
+    ]
   },
   {
     "id": 2,
@@ -175,7 +193,7 @@
     "calories": "210",
     "protein": "3G",
     "carbs": "26G",
-    "bgColor": "#a2d2ff"
+    "bgColor": "#ff3d3d"
   },
   {
     "id": 13,
@@ -189,7 +207,25 @@
     "calories": "380",
     "protein": "5G",
     "carbs": "52G",
-    "bgColor": "#fff3b0"
+    "bgColor": "#fff3b0",
+    "sizes": [
+      {
+        "label": "Large",
+        "price": "750"
+      },
+      {
+        "label": "Small",
+        "price": "550"
+      },
+      {
+        "label": "Large-Egg Free",
+        "price": "800"
+      },
+      {
+        "label": "Small- Egg Free",
+        "price": "600"
+      }
+    ]
   },
   {
     "id": 14,
@@ -329,7 +365,25 @@
     "calories": "310",
     "protein": "5G",
     "carbs": "45G",
-    "bgColor": "#fdf0d5"
+    "bgColor": "#fdf0d5",
+    "sizes": [
+      {
+        "label": "Large",
+        "price": "450"
+      },
+      {
+        "label": "Small",
+        "price": "250"
+      },
+      {
+        "label": "Large-Egg Free",
+        "price": "500"
+      },
+      {
+        "label": "Small- Egg Free",
+        "price": "300"
+      }
+    ]
   },
   {
     "id": 24,
@@ -385,7 +439,25 @@
     "calories": "420",
     "protein": "8G",
     "carbs": "50G",
-    "bgColor": "#d8f3dc"
+    "bgColor": "#d8f3dc",
+    "sizes": [
+      {
+        "label": "Large",
+        "price": "900"
+      },
+      {
+        "label": "Small",
+        "price": "700"
+      },
+      {
+        "label": "Large-Egg Free",
+        "price": "950"
+      },
+      {
+        "label": "Small- Egg Free",
+        "price": "750"
+      }
+    ]
   },
   {
     "id": 28,
@@ -497,6 +569,24 @@
     "calories": "300",
     "protein": "4G",
     "carbs": "38G",
-    "bgColor": "#ffccd5"
+    "bgColor": "#ffccd5",
+    "sizes": [
+      {
+        "label": "Large",
+        "price": "250"
+      },
+      {
+        "label": "Small",
+        "price": "50"
+      },
+      {
+        "label": "Large-Egg Free",
+        "price": "300"
+      },
+      {
+        "label": "Small- Egg Free",
+        "price": "100"
+      }
+    ]
   }
 ]

@@ -3,8 +3,10 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { CiCirclePlus, CiCircleRemove } from "react-icons/ci";
+import Link from "next/link";
 
 interface ProductCardProps {
+  id: string | number;
   name: string;
   image: string;
   ingredients: string[];
@@ -12,10 +14,10 @@ interface ProductCardProps {
   calories: string;
   protein: string;
   bgColor: string;
-  onClick: () => void;
 }
 
 const ProductCard = ({
+  id,
   name,
   image,
   ingredients,
@@ -23,16 +25,15 @@ const ProductCard = ({
   calories,
   protein,
   bgColor,
-  onClick,
 }: ProductCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div
+    <Link
+      href={`/shop/${id}`}
       className="flex flex-col gap-3 lg:gap-5 w-full max-w-[380px] cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={onClick}
     >
       <div className="relative h-[400px] rounded-2xl border border-black overflow-hidden shadow-neo transition-all duration-300">
         <AnimatePresence mode="wait">
@@ -101,7 +102,7 @@ const ProductCard = ({
           )}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
