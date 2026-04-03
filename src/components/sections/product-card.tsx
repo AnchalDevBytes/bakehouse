@@ -29,12 +29,12 @@ const ProductCard = ({
 
   return (
     <div
-      className="flex flex-col gap-4 w-full max-w-[420px] cursor-pointer"
+      className="flex flex-col gap-3 lg:gap-5 w-full max-w-[380px] cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={onClick}
     >
-      <div className="relative h-[460px] rounded-3xl border border-black overflow-hidden shadow-neo transition-all duration-300">
+      <div className="relative h-[400px] rounded-2xl border border-black overflow-hidden shadow-neo transition-all duration-300">
         <AnimatePresence mode="wait">
           {!isHovered ? (
             <motion.div
@@ -92,9 +92,7 @@ const ProductCard = ({
       </div>
 
       <div className="flex justify-between px-2 items-center">
-        <h5 className="text-2xl sm:text-3xl font-source-serif font-semibold">
-          {name}
-        </h5>
+        <h5 className="text-2xl font-source-serif">{name}</h5>
         <div className="text-black">
           {isHovered ? (
             <CiCircleRemove size={48} className="stroke-[0.5px]" />

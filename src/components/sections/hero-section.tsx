@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen py-24 md:py-32 px-2 md:px-20">
+    <section className="py-24 md:py-32 px-2 md:px-20">
       <div className="grid grid-cols-7 grid-rows-7 gap-2 md:gap-5 h-[400px] sm:h-[600px] md:h-[950px]">
         <Card
           bgColor="bg-[#2a1b15]"
