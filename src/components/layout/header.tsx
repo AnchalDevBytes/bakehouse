@@ -16,10 +16,10 @@ const navItems = [
 ];
 
 export function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const pathname = usePathname();
   const items = useCartStore((state) => state.items);
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
     setMounted(true);
@@ -48,7 +48,7 @@ export function Header() {
                 <div className="flex items-center gap-2">
                   {item.name}
                   {item.name === "Cart" && mounted && cartCount > 0 && (
-                    <span className="bg-[#ff3d3d] text-white min-w-[24px] h-6 rounded-full flex items-center justify-center text-xs border-2 border-black shadow-neo-sm">
+                    <span className="bg-red-500 text-white min-w-5 h-5 rounded-full flex items-center justify-center text-[10px] border border-black">
                       {cartCount}
                     </span>
                   )}
@@ -93,7 +93,7 @@ export function Header() {
                   <div className="flex items-center justify-center gap-2">
                     {item.name}
                     {item.name === "Cart" && mounted && cartCount > 0 && (
-                      <span className="bg-[#ff3d3d] text-white min-w-[24px] h-6 rounded-full flex items-center justify-center text-xs border-2 border-black shadow-neo-sm">
+                      <span className="bg-red-500 text-white min-w-5 h-5 rounded-full flex items-center justify-center text-[10px] border border-black">
                         {cartCount}
                       </span>
                     )}

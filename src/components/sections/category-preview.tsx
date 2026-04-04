@@ -20,7 +20,7 @@ export default function CategoryPreview({
   if (previewProducts.length === 0) return null;
 
   return (
-    <section className="flex flex-col gap-12 sm:gap-20 py-12 sm:py-16 px-4 sm:px-6 lg:px-0">
+    <section className="flex flex-col gap-12 sm:gap-20 py-10 md:py-16 px-4 sm:px-6 lg:px-0">
       <div className="flex items-center justify-between gap-6 px-4 md:px-20 w-full min-w-0">
         <h4 className="text-3xl sm:text-4xl md:text-5xl font-source-serif text-black leading-tight">
           {title}

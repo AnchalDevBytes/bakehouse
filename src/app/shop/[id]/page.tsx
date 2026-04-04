@@ -31,16 +31,12 @@ export default async function ProductDetailPage({
         {/* Back Navigation */}
         <Link
           href={`/shop?category=${product.category}`}
-          className="inline-flex items-center gap-2 mb-12 text-black hover:opacity-70 transition-opacity font-bold uppercase tracking-widest text-sm"
+          className="inline-flex items-center gap-2 mb-12 text-black hover:opacity-70 transition-opacity font-medium uppercase tracking-widest text-sm"
         >
-          <HiArrowLeft size={20} /> Back to{" "}
-          {product.category === "cakes&pastry"
-            ? "Cakes & Pastries"
-            : product.category}
+          <HiArrowLeft size={20} /> Back to {product.category}
         </Link>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-start">
-          {/* Left side: Image */}
           <div
             className="rounded-[40px] aspect-square flex items-center justify-center p-12 border-[3px] border-black shadow-neo"
             style={{ backgroundColor: product.bgColor }}
@@ -57,7 +53,6 @@ export default async function ProductDetailPage({
             </div>
           </div>
 
-          {/* Right side: Details */}
           <div className="flex flex-col gap-8 py-4 font-figtree">
             <div className="flex flex-col gap-4">
               <h1 className="text-3xl md:text-5xl font-source-serif text-[#1a1a1a] uppercase leading-none">

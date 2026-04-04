@@ -33,7 +33,7 @@ export default function CartPage() {
 
   const handleCheckout = async () => {
     setIsCheckingOut(true);
-    // Simulate payment processing
+    // payment processing
     await new Promise((resolve) => setTimeout(resolve, 2000));
     checkout();
     setIsCheckingOut(false);
@@ -42,30 +42,64 @@ export default function CartPage() {
 
   if (orderSuccess) {
     return (
-      <main className="min-h-screen bg-[#fdfcfb] pt-32 pb-24 flex items-center justify-center">
+      <main className="bg-[#fdfcfb] pt-32 pb-24 flex items-center justify-center">
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          className="max-w-md w-full bg-white border-4 border-black p-10 rounded-[40px] shadow-neo text-center flex flex-col gap-8 mx-4"
+          className="max-w-xl w-full bg-[#fff3da] border-2 border-black p-4 md:p-8 rounded-[40px] shadow-neo-lg text-center flex flex-col gap-10 mx-4 relative overflow-hidden"
         >
-          <div className="flex justify-center">
-            <HiCheckCircle size={100} className="text-green-500" />
+          {/* Success Icon & Header */}
+          <div className="flex flex-col items-center gap-6 relative z-10">
+            <div className="w-12 h-12 bg-green-500 rounded-full border-2 border-black flex items-center justify-center shadow-neo-sm animate-bounce">
+              <HiCheckCircle size={32} className="text-black" />
+            </div>
+            <div className="flex flex-col gap-2">
+              <h1 className="text-3xl md:text-4xl font-source-serif text-[#1a1a1a] uppercase leading-none">
+                Order <br /> Confirmed!
+              </h1>
+              <p className="text-lg md:text-xl font-source-serif italic text-black/60">
+                Your delicious treats are being prepared...
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col gap-4">
-            <h1 className="text-4xl font-shrikhand uppercase leading-none">
-              Order Placed!
-            </h1>
-            <p className="text-lg text-black/60 font-figtree">
-              Your delicious treats are being prepared. Thank you for choosing
-              Bakehouse!
+
+          {/* Summary */}
+          <div className="bg-white border border-black rounded-3xl p-6 md:p-8 flex flex-col gap-6 shadow-neo relative">
+            <div className="flex justify-between items-center border-b-2 border-black border-dashed pb-4 text-sm font-medium uppercase tracking-widest text-black/40">
+              <span>
+                Receipt #BK-{Math.floor(Math.random() * 900000) + 100000}
+              </span>
+              <span>
+                {new Date().toLocaleDateString("en-GB", {
+                  day: "numeric",
+                  month: "short",
+                })}
+              </span>
+            </div>
+
+            <p className="text-sm md:text-lg font-bold text-left leading-relaxed">
+              Thank you for choosing Bakehouse. Your order has been received and
+              added to your history. We'll start baking shortly!
             </p>
           </div>
-          <Link
-            href="/shop"
-            className="w-full py-5 bg-[#ffc65d] border-2 border-black rounded-2xl text-xl font-bold uppercase tracking-widest shadow-neo hover:-translate-y-1 transition-all"
-          >
-            Keep Shopping
-          </Link>
+
+          <div className="flex flex-col sm:flex-row gap-4 relative z-10">
+            <Link
+              href="/orders"
+              className="flex-1 py-4 bg-black text-white border-4 border-black rounded-2xl text-xl font-bold uppercase tracking-widest shadow-neo hover:-translate-y-1 transition-all"
+            >
+              Track Orders
+            </Link>
+            <Link
+              href="/shop"
+              className="flex-1 py-4 bg-white text-black border-4 border-black rounded-2xl text-xl font-bold uppercase tracking-widest shadow-neo hover:-translate-y-1 transition-all"
+            >
+              Keep Shopping
+            </Link>
+          </div>
+
+          {/* Decorative Corner */}
+          <div className="absolute top-0 right-0 w-24 h-24 bg-[#ffc65d] border-l-4 border-b-4 border-black -rotate-45 translate-x-12 -translate-y-12" />
         </motion.div>
       </main>
     );
@@ -74,7 +108,7 @@ export default function CartPage() {
   return (
     <main className="min-h-screen bg-[#fdfcfb] pt-32 pb-24">
       <div className="container mx-auto px-4 max-w-6xl">
-        <h1 className="text-5xl md:text-7xl font-shrikhand text-[#1a1a1a] uppercase leading-none mb-12">
+        <h1 className="text-4xl md:text-5xl font-source-serif text-black/90 uppercase leading-none mb-12">
           Your Basket
         </h1>
 
@@ -104,24 +138,24 @@ export default function CartPage() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
-                    className="flex flex-col sm:flex-row gap-6 p-6 bg-white border-4 border-black rounded-[30px] shadow-neo relative overflow-hidden"
+                    className="flex flex-col sm:flex-row gap-6 p-6 relative overflow-hidden border-b last:border-b-0"
                   >
                     <div
-                      className="w-full sm:w-32 h-32 bg-gray-100 border-2 border-black rounded-2xl shrink-0 relative flex items-center justify-center overflow-hidden"
+                      className="w-full sm:w-28 h-28 shrink-0 relative rounded-md flex items-center justify-center overflow-hidden"
                       style={{ backgroundColor: "#f3f4f6" }}
                     >
                       <Image
                         src={item.image}
                         alt={item.name}
                         fill
-                        className="object-contain p-4"
+                        className="object-contain p-2"
                       />
                     </div>
 
                     <div className="flex-1 flex flex-col justify-between py-2">
                       <div className="flex justify-between items-start">
                         <div className="flex flex-col gap-1">
-                          <h3 className="text-2xl font-bold uppercase leading-none">
+                          <h3 className="text-xl font-bold leading-relaxed">
                             {item.name}
                           </h3>
                           {item.size && (
@@ -132,15 +166,15 @@ export default function CartPage() {
                         </div>
                         <button
                           onClick={() => removeItem(item.id, item.size)}
-                          className="p-2 hover:bg-red-50 text-red-500 rounded-xl transition-colors shrink-0"
+                          className="p-1 hover:bg-red-50 text-red-500 rounded-xl transition-colors shrink-0"
                           title="Remove item"
                         >
-                          <HiTrash size={24} />
+                          <HiTrash size={22} />
                         </button>
                       </div>
 
                       <div className="flex justify-between items-center mt-4">
-                        <div className="flex items-center bg-[#f5f5f5] rounded-full px-2 h-12 shadow-inner border border-black/5">
+                        <div className="flex items-center bg-[#f5f5f5] rounded-full px-2 h-11 shadow-inner border border-black/5">
                           <button
                             onClick={() =>
                               updateQuantity(
@@ -170,7 +204,7 @@ export default function CartPage() {
                           </button>
                         </div>
 
-                        <div className="text-2xl font-bold">
+                        <div className="text-xl font-bold">
                           Rs.{" "}
                           {(parseFloat(item.price) * item.quantity).toFixed(2)}
                         </div>
@@ -183,8 +217,8 @@ export default function CartPage() {
 
             {/* Summary */}
             <div className="lg:col-span-1 lg:sticky lg:top-32">
-              <div className="bg-white border-4 border-black p-8 rounded-[40px] shadow-neo flex flex-col gap-8">
-                <h2 className="text-3xl font-shrikhand uppercase leading-none border-b-4 border-black pb-4 text-[#1a1a1a]">
+              <div className="bg-white border border-black p-8 rounded-[40px] shadow-neo flex flex-col gap-8">
+                <h2 className="text-3xl font-source-serif uppercase leading-none border-b-2 border-black pb-4 text-[#1a1a1a]">
                   Summary
                 </h2>
 
@@ -199,7 +233,7 @@ export default function CartPage() {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center text-3xl font-bold border-t-4 border-black pt-6 text-[#1a1a1a]">
+                <div className="flex justify-between items-center text-3xl font-bold border-t-2 border-black pt-6 text-[#1a1a1a]">
                   <span>Total</span>
                   <span>Rs. {total.toFixed(2)}</span>
                 </div>
@@ -207,7 +241,7 @@ export default function CartPage() {
                 <button
                   onClick={handleCheckout}
                   disabled={isCheckingOut}
-                  className={`w-full py-5 ${isCheckingOut ? "bg-gray-200" : "bg-black"} text-white border-2 border-black rounded-2xl text-xl font-bold uppercase tracking-widest shadow-neo-sm hover:-translate-y-1 hover:shadow-neo transition-all flex items-center justify-center gap-3`}
+                  className={`w-full py-3 ${isCheckingOut ? "bg-black text-white" : "bg-gray-200"} text-black border-2 border-black rounded-2xl text-lg font-bold uppercase tracking-widest shadow-neo hover:-translate-y-1 hover:shadow-neo transition-all flex items-center justify-center gap-3`}
                 >
                   {isCheckingOut ? (
                     <>

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="py-24 md:py-32 px-2 lg:px-20">
+    <section className="py-24 md:py-32 px-2 lg:px-20 -mb-16">
       <div className="grid grid-cols-7 grid-rows-7 gap-2 md:gap-5 h-[400px] sm:h-[600px] md:h-[950px]">
         <Card
           bgColor="bg-[#2a1b15]"
@@ -32,12 +32,13 @@ const HeroSection = () => {
 
           <div className="z-1">
             <h1 className="font-shrikhand text-[clamp(2rem,10vw,8rem)] leading-[0.85] mb-2 md:mb-4">
-              SWEET
+              HEAVENLY
               <br />
-              DELIGHT!
+              BITES
             </h1>
-            <p className="max-w-[70%] md:max-w-xs text-orange-100/80 text-[10px] sm:text-sm md:text-lg leading-tight">
-              From warm breads to delightful pastries, made with love.
+            <p className="max-w-[70%] md:max-w-sm text-orange-100/80 text-[10px] sm:text-sm md:text-lg leading-tight">
+              Hand-kneaded dough, farm-fresh ingredients, and a dash of magic in
+              every bite.
             </p>
           </div>
 
@@ -45,7 +46,7 @@ const HeroSection = () => {
             <div className="text-xl md:text-5xl font-shrikhand text-[#f1b434]">
               ( 4.9 )
               <span className="block text-[8px] md:text-sm font-sans text-white/60 mt-0.5 tracking-tighter md:tracking-wider uppercase">
-                since 1985
+                Trusted Since 1995
               </span>
             </div>
           </div>
@@ -79,10 +80,10 @@ const HeroSection = () => {
           className="col-span-2 row-span-3 flex flex-col items-center justify-center text-center p-3 sm:p-5 md:p-10"
         >
           <h3 className="font-shrikhand text-lg sm:text-3xl md:text-5xl leading-none">
-            SWEET
+            FRESH
           </h3>
           <p className="text-[8px] md:text-sm opacity-70 font-bold tracking-tighter md:tracking-widest uppercase">
-            Main St.
+            Baked Hourly
           </p>
           <div className="relative w-full aspect-square lg:aspect-2/1 mt-1 md:mt-4">
             <Image
@@ -100,10 +101,10 @@ const HeroSection = () => {
           className="col-span-2 row-span-4 flex flex-col items-center text-center text-white p-3 sm:p-5 md:p-10"
         >
           <h3 className="font-shrikhand text-sm sm:text-3xl md:text-4xl lg:text-6xl leading-none">
-            Everyday
+            ALWAYS
           </h3>
           <p className="text-[8px] md:text-sm opacity-80 mb-2 md:mb-6 font-bold tracking-tighter md:tracking-widest uppercase">
-            Seattle
+            Organic & Local
           </p>
           <div className="relative w-full flex-1 min-h-[60px] md:min-h-[150px]">
             <Image
@@ -115,7 +116,7 @@ const HeroSection = () => {
             />
           </div>
           <p className="text-[10px] md:text-xs opacity-70 mt-2 hidden sm:block">
-            Warm breads since 1985.
+            Crafting memories since 1995.
           </p>
         </Card>
 
@@ -125,9 +126,9 @@ const HeroSection = () => {
         >
           <div className="flex-1">
             <h2 className="font-shrikhand text-2xl sm:text-5xl md:text-6xl leading-[0.9]">
-              20%
+              HAPPY
               <br />
-              <span className="text-xs sm:text-3xl md:text-5xl">DISCOUNT</span>
+              <span className="text-xs sm:text-3xl md:text-5xl">Hour 20%</span>
             </h2>
           </div>
 
@@ -135,15 +136,15 @@ const HeroSection = () => {
             {[
               {
                 name: "Fresh Doughnut",
-                price: "$4.99",
+                price: "30",
                 color: "bg-pink-400",
-                icon: "/food/donut1.png",
+                icon: "/food/donut2.png",
               },
               {
                 name: "Chocolate Glaze",
-                price: "$5.49",
+                price: "50",
                 color: "bg-red-400",
-                icon: "/food/donut2.png",
+                icon: "/food/donut1.png",
               },
             ].map((item, i) => (
               <div

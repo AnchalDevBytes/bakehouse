@@ -19,7 +19,7 @@ const Button = ({
   <Link href={href} onClick={onClick}>
     <motion.button
       className={cn(
-        "px-6 py-2 font-bold text-lg border-2 border-black rounded-xl transition-all shadow-neo hover:shadow-neo-lg ease-in-out duration-400",
+        "px-6 py-1 font-bold text-lg border-2 border-black rounded-xl transition-all shadow-neo hover:shadow-neo-lg ease-in-out duration-400",
         variant === "white" ? "bg-white" : "bg-[#f1b434] shadow-neo-lg",
         className,
       )}

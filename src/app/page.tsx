@@ -11,14 +11,14 @@ const HomePage = () => {
 
       <CategoryPreview
         title="Cakes & Pastries"
-        categoryId="cakes&pastry"
-        products={products.filter((p) => p.category === "cakes&pastry")}
+        categoryId="cakepastry"
+        products={products.filter((p) => p.category === "cakepastry")}
       />
 
       <CategoryPreview
         title="Fresh Breads"
-        categoryId="Breads"
-        products={products.filter((p) => p.category === "Breads")}
+        categoryId="bread"
+        products={products.filter((p) => p.category === "bread")}
       />
 
       <CategoryPreview
@@ -35,8 +35,8 @@ const HomePage = () => {
 
       <CategoryPreview
         title="Sweet Desserts"
-        categoryId="Deserts"
-        products={products.filter((p) => p.category === "Deserts")}
+        categoryId="deserts"
+        products={products.filter((p) => p.category === "deserts")}
       />
     </main>
   );

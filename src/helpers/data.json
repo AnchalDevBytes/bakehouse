@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Chocolate Cake",
-    "category": "cakes&pastry",
+    "category": "cakepastry",
     "isNew": true,
     "image": "/food/choco-cake.png",
     "description": "Our signature rich, moist chocolate cake made with premium cocoa.",
@@ -22,7 +22,7 @@
   {
     "id": 2,
     "name": "Classic Cookie",
-    "category": "Deserts",
+    "category": "deserts",
     "isNew": false,
     "image": "/food/cookie.png",
     "description": "Crunchy, golden-brown cookies packed with chocolate chips.",
@@ -102,7 +102,7 @@
   {
     "id": 7,
     "name": "Whole Wheat Bread",
-    "category": "Breads",
+    "category": "bread",
     "isNew": false,
     "image": "/food/whole-wheat-bread.png",
     "description": "Freshly baked healthy brown bread, perfect for sandwiches.",
@@ -116,7 +116,7 @@
   {
     "id": 8,
     "name": "Red Velvet Pastry",
-    "category": "cakes&pastry",
+    "category": "cakepastry",
     "isNew": true,
     "image": "/food/red-velvet-cake.png",
     "description": "Creamy cocoa-infused red velvet sponge with cream cheese frosting.",
@@ -144,7 +144,7 @@
   {
     "id": 10,
     "name": "Garlic Bread Sticks",
-    "category": "Breads",
+    "category": "bread",
     "isNew": true,
     "image": "/food/garlic-bread-stick.png",
     "description": "Soft dough sticks brushed with garlic butter and herbs.",
@@ -186,7 +186,7 @@
   {
     "id": 13,
     "name": "Pineapple Cake",
-    "category": "cakes&pastry",
+    "category": "cakepastry",
     "isNew": false,
     "image": "/food/pine-apple-cake.png",
     "description": "Tropical delight with layers of pineapple and whipped cream.",
@@ -206,7 +206,7 @@
   {
     "id": 14,
     "name": "Fudge Brownie",
-    "category": "Deserts",
+    "category": "deserts",
     "isNew": true,
     "image": "/food/fudgebrownie.png",
     "description": "Gooey, extra-dark chocolate brownie topped with walnuts.",
@@ -220,7 +220,7 @@
   {
     "id": 15,
     "name": "Milk Bread",
-    "category": "Breads",
+    "category": "bread",
     "isNew": false,
     "image": "/food/milk-bread.png",
     "description": "Super soft, sweet milk bread for everyday breakfast.",
@@ -262,7 +262,7 @@
   {
     "id": 18,
     "name": "Black Forest Pastry",
-    "category": "cakes&pastry",
+    "category": "cakepastry",
     "isNew": false,
     "image": "/food/black-forest.png",
     "description": "Chocolate layers with cherries and snow-white cream.",
@@ -276,7 +276,7 @@
   {
     "id": 19,
     "name": "Oatmeal Cookie",
-    "category": "Deserts",
+    "category": "deserts",
     "isNew": false,
     "image": "/food/oatmeal-cookie.png",
     "description": "Healthy oatmeal cookies with raisins and a hint of cinnamon.",
@@ -290,7 +290,7 @@
   {
     "id": 20,
     "name": "Multigrain Bread",
-    "category": "Breads",
+    "category": "bread",
     "isNew": true,
     "image": "/food/multi-grain-bread.png",
     "description": "Nutrient-rich bread topped with pumpkin and flax seeds.",
@@ -332,7 +332,7 @@
   {
     "id": 23,
     "name": "Fruit Cake",
-    "category": "cakes&pastry",
+    "category": "cakepastry",
     "isNew": false,
     "image": "/food/fruit-cake.png",
     "description": "Traditional loaf cake loaded with candied fruits and nuts.",
@@ -366,7 +366,7 @@
   {
     "id": 25,
     "name": "French Baguette",
-    "category": "Breads",
+    "category": "bread",
     "isNew": false,
     "image": "/food/french-bread.png",
     "description": "Crispy crust and soft airy interior, baked daily.",
@@ -380,7 +380,7 @@
   {
     "id": 26,
     "name": "Apple Pie",
-    "category": "Deserts",
+    "category": "deserts",
     "isNew": true,
     "image": "/food/apple-pie.png",
     "description": "Warm cinnamon apples tucked into a buttery flaky crust.",
@@ -394,7 +394,7 @@
   {
     "id": 27,
     "name": "Pista Cake",
-    "category": "cakes&pastry",
+    "category": "cakepastry",
     "isNew": false,
     "image": "/food/pista-cake.png",
     "description": "Light sponge flavored with real roasted pistachios.",
@@ -414,7 +414,7 @@
   {
     "id": 28,
     "name": "Chocolate Croissant",
-    "category": "Breads",
+    "category": "bread",
     "isNew": true,
     "image": "/food/chocolate-croissant.png",
     "description": "Flaky, buttery pastry filled with dark chocolate batons.",
@@ -428,7 +428,7 @@
   {
     "id": 29,
     "name": "Tiramisu Cup",
-    "category": "Deserts",
+    "category": "deserts",
     "isNew": true,
     "image": "/food/tiramisu-cup.png",
     "description": "Coffee-soaked layers with mascarpone and cocoa dusting.",
@@ -470,7 +470,7 @@
   {
     "id": 32,
     "name": "Focaccia Bread",
-    "category": "Breads",
+    "category": "bread",
     "isNew": true,
     "image": "/food/milk-bread.png",
     "description": "Italian bread topped with rosemary, olives, and olive oil.",
@@ -484,7 +484,7 @@
   {
     "id": 33,
     "name": "Lemon Tart",
-    "category": "Deserts",
+    "category": "deserts",
     "isNew": false,
     "image": "/food/lemon-tart.png",
     "description": "Zesty lemon curd in a shortcrust pastry shell.",
@@ -512,7 +512,7 @@
   {
     "id": 35,
     "name": "Bento Cake",
-    "category": "cakes&pastry",
+    "category": "cakepastry",
     "isNew": true,
     "image": "/food/bento-cake.png",
     "description": "Trendy mini cake for one, perfectly decorated in a box.",

@@ -6,6 +6,7 @@ import products from "@/helpers/data.json";
 
 const NewArrivals = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
@@ -33,33 +34,47 @@ const NewArrivals = () => {
   useEffect(() => {
     handleScroll();
     window.addEventListener("resize", handleScroll);
-    return () => window.removeEventListener("resize", handleScroll);
-  }, []);
+
+    const interval = setInterval(() => {
+      if (!isPaused && scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 10;
+
+        if (isAtEnd) {
+          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          scroll("right");
+        }
+      }
+    }, 3000);
+
+    return () => {
+      window.removeEventListener("resize", handleScroll);
+      clearInterval(interval);
+    };
+  }, [isPaused]);
 
   const newArrivals = products.filter((product) => product.isNew).slice(0, 10);
 
   return (
-    <section className="flex flex-col gap-12 sm:gap-20 px-4 sm:px-6 lg:px-0">
+    <section className="flex flex-col gap-12 sm:gap-20 px-0 sm:px-6 lg:px-0 py-10 lg:py-20">
       <div className="flex items-center justify-center gap-6 px-4 md:px-20 w-full min-w-0">
         <h4 className="text-3xl sm:text-4xl md:text-5xl font-source-serif text-black leading-tight">
           New Arrivals
         </h4>
-        <button className="px-4 sm:px-8 py-1 bg-[#2a1b15] text-white rounded-xl font-bold flex items-center gap-2 hover:bg-[#3d2921] transition-all duration-300 w-fit shrink-0">
-          See All <span className="text-xl -translate-y-1">→</span>
-        </button>
       </div>
 
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:overflow-x-hidden lg:gap-6 no-scrollbar pb-8 gap-12"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        className="flex overflow-x-auto overflow-y-hidden lg:overflow-x-hidden gap-4 lg:gap-6 no-scrollbar px-4 md:px-20"
       >
-        {newArrivals.map((product, index) => (
+        {newArrivals.map((product) => (
           <div
             key={product.id}
-            className={`lg:shrink-0 lg:w-[380px] flex items-center justify-center ${
-              index >= 4 ? "hidden lg:flex" : "flex"
-            }`}
+            className="shrink-0 w-[280px] sm:w-[320px] lg:w-[380px] flex items-center justify-center"
           >
             <ProductCard
               id={product.id}
@@ -70,13 +85,14 @@ const NewArrivals = () => {
               calories={product.calories}
               protein={product.protein}
               bgColor={product.bgColor}
+              hideFooterOnMobile={true}
             />
           </div>
         ))}
       </div>
 
-      {/* Navigation Controls - Desktop Only */}
-      <div className="hidden lg:flex flex-col items-center gap-6 mt-4">
+      {/* Navigation Controls */}
+      <div className="flex flex-col items-center gap-6">
         <div className="flex items-center gap-8 w-full max-w-2xl px-12">
           <button
             onClick={() => scroll("left")}

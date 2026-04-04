@@ -14,6 +14,7 @@ interface ProductCardProps {
   calories: string;
   protein: string;
   bgColor: string;
+  hideFooterOnMobile?: boolean;
 }
 
 const ProductCard = ({
@@ -25,6 +26,7 @@ const ProductCard = ({
   calories,
   protein,
   bgColor,
+  hideFooterOnMobile = false,
 }: ProductCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -35,7 +37,7 @@ const ProductCard = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative h-[400px] rounded-2xl border border-black overflow-hidden shadow-neo transition-all duration-300">
+      <div className="relative h-[300px] md:h-[400px] rounded-2xl border border-black overflow-hidden shadow-neo transition-all duration-300">
         <AnimatePresence mode="wait">
           {!isHovered ? (
             <motion.div
@@ -93,7 +95,11 @@ const ProductCard = ({
         </AnimatePresence>
       </div>
 
-      <div className="flex justify-between px-2 items-center">
+      <div
+        className={`flex justify-between px-2 items-center ${
+          hideFooterOnMobile ? "hidden lg:flex" : "flex"
+        }`}
+      >
         <h5 className="text-2xl font-source-serif">{name}</h5>
         <div className="text-black">
           {isHovered ? (

@@ -84,7 +84,7 @@ export default function AddToCartForm({ product }: AddToCartProps) {
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
         <button
           onClick={handleAddToCart}
-          className="flex-1 w-full h-14 bg-white text-black border border-black text-sm font-bold uppercase tracking-[0.2em] rounded-2xl shadow-neo-sm hover:-translate-y-1 hover:shadow-neo transition-all"
+          className="w-full h-14 bg-white text-black border border-black text-sm font-bold uppercase tracking-[0.2em] rounded-2xl shadow-neo-sm hover:-translate-y-1 hover:shadow-neo transition-all"
         >
           Add To Cart
         </button>
