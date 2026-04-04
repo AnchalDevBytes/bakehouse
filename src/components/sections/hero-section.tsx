@@ -21,10 +21,11 @@ const HeroSection = () => {
 
           <div className="absolute -bottom-8 sm:-bottom-5 md:bottom-0 right-0  w-[70%] h-[80%] z-10 pointer-events-none">
             <Image
-              src="/choco-cake.png"
+              src="/food/choco-cake.png"
               alt="chocolate cake"
               fill
               className="object-contain scale-110 md:scale-125 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+              sizes="(max-width: 768px) 100vw, 70vw"
               priority
             />
           </div>
@@ -52,20 +53,22 @@ const HeroSection = () => {
           {/* Cookies */}
           <div className="absolute -right-2 -top-12 w-1/4 h-full overflow-hidden pointer-events-none opacity-90">
             <Image
-              src="/cookie.png"
+              src="/food/cookie.png"
               alt="Cookie"
               fill
               className="object-contain scale-[1.2] md:scale-125 translate-x-1/4 -translate-y-1/4"
+              sizes="25vw"
               priority
             />
           </div>
 
           <div className="absolute top-2 sm:top-10 lg:top-28 lg:-right-20 md:-right-10 -right-7 w-1/4 h-full overflow-hidden pointer-events-none opacity-90">
             <Image
-              src="/cookie.png"
+              src="/food/cookie.png"
               alt="Cookie"
               fill
               className="object-contain rotate-90 scale-[1.2] md:scale-125 translate-x-1/4 -translate-y-1/4"
+              sizes="25vw"
               priority
             />
           </div>
@@ -83,10 +86,11 @@ const HeroSection = () => {
           </p>
           <div className="relative w-full aspect-square lg:aspect-2/1 mt-1 md:mt-4">
             <Image
-              src={`/girl-with-donut.png`}
+              src={`/food/girl-with-donut.png`}
               alt="Girl with cookie"
               fill
               className="object-contain object-bottom scale-110"
+              sizes="(max-width: 768px) 100vw, 30vw"
             />
           </div>
         </Card>
@@ -103,10 +107,11 @@ const HeroSection = () => {
           </p>
           <div className="relative w-full flex-1 min-h-[60px] md:min-h-[150px]">
             <Image
-              src="/donutstack.png"
+              src="/food/donutstack.png"
               alt="Donut stack"
               fill
               className="object-contain drop-shadow-lg"
+              sizes="(max-width: 768px) 100vw, 30vw"
             />
           </div>
           <p className="text-[10px] md:text-xs opacity-70 mt-2 hidden sm:block">
@@ -132,13 +137,13 @@ const HeroSection = () => {
                 name: "Fresh Doughnut",
                 price: "$4.99",
                 color: "bg-pink-400",
-                icon: "/donut1.png",
+                icon: "/food/donut1.png",
               },
               {
                 name: "Chocolate Glaze",
                 price: "$5.49",
                 color: "bg-red-400",
-                icon: "/donut2.png",
+                icon: "/food/donut2.png",
               },
             ].map((item, i) => (
               <div

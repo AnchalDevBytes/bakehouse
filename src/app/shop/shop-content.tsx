@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import productsData from "@/helpers/data.json";
@@ -18,12 +17,12 @@ const categories = [
 export default function ShopContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  
+
   const [activeCategory, setActiveCategory] = useState("all");
 
   useEffect(() => {
     const cat = searchParams.get("category");
-    if (cat && categories.some(c => c.id === cat)) {
+    if (cat && categories.some((c) => c.id === cat)) {
       setActiveCategory(cat);
     } else {
       setActiveCategory("all");
@@ -38,21 +37,26 @@ export default function ShopContent() {
     }
   };
 
-  const filteredProducts = activeCategory === "all" 
-    ? productsData 
-    : productsData.filter((p) => p.category === activeCategory);
+  const filteredProducts =
+    activeCategory === "all"
+      ? productsData
+      : productsData.filter((p) => p.category === activeCategory);
 
   return (
     <div className="px-4 md:px-20">
       <div className="flex flex-col gap-8 mb-16">
         <div className="flex items-end justify-between">
           <div>
-            <h1 className="text-5xl md:text-6xl font-source-serif mb-4">Our Menu</h1>
-            <p className="text-xl max-w-2xl text-gray-700">Explore our delicious selection of baked daily artisan goods.</p>
+            <h1 className="text-5xl md:text-6xl font-source-serif mb-4">
+              Our Menu
+            </h1>
+            <p className="text-xl max-w-2xl text-gray-700">
+              Explore our delicious selection of baked daily artisan goods.
+            </p>
           </div>
-          
+
           {activeCategory !== "all" && (
-            <button 
+            <button
               onClick={() => handleCategoryChange("all")}
               className="text-lg underline underline-offset-4 decoration-2 font-bold hover:text-gray-500"
             >
@@ -68,8 +72,8 @@ export default function ShopContent() {
               key={cat.id}
               onClick={() => handleCategoryChange(cat.id)}
               className={`px-6 py-2 rounded-full border-2 border-black font-bold text-lg transition-all duration-300 shadow-neo ${
-                activeCategory === cat.id 
-                  ? "bg-[#2a1b15] text-white -translate-y-1" 
+                activeCategory === cat.id
+                  ? "bg-[#2a1b15] text-white -translate-y-1"
                   : "bg-white hover:-translate-y-1 hover:bg-gray-50"
               }`}
             >

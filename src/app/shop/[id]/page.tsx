@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { notFound } from "next/navigation";
 import { HiArrowLeft } from "react-icons/hi2";
 import productsData from "@/helpers/data.json";
@@ -51,6 +51,7 @@ export default async function ProductDetailPage({
                 alt={product.name}
                 fill
                 className="object-contain hover:scale-105 transition-transform duration-500 hover:-rotate-3"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
             </div>

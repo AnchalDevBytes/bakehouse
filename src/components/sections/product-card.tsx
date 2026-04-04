@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { CiCirclePlus, CiCircleRemove } from "react-icons/ci";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 interface ProductCardProps {
   id: string | number;
@@ -52,6 +52,7 @@ const ProductCard = ({
                   alt={name}
                   fill
                   className="object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 380px"
                   priority
                 />
               </div>

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi2";
-import ProductCard from "./product-card";
+import ProductCard from "@/components/sections/product-card";
 import products from "@/helpers/data.json";
 
 const NewArrivals = () => {

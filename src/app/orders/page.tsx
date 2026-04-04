@@ -1,7 +1,6 @@
 "use client";
-
 import { useCartStore } from "@/store/useCartStore";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { HiArrowLeft, HiShoppingBag, HiArrowPath } from "react-icons/hi2";

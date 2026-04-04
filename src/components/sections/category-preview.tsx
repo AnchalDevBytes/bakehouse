@@ -1,7 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import ProductCard from "./product-card";
 import productsData from "@/helpers/data.json";
 
