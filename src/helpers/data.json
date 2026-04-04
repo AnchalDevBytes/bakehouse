@@ -4,7 +4,7 @@
     "name": "Chocolate Cake",
     "category": "cakes&pastry",
     "isNew": true,
-    "image": "/choco-cake.png",
+    "image": "/food/choco-cake.png",
     "description": "Our signature rich, moist chocolate cake made with premium cocoa.",
     "ingredients": ["Premium cocoa", "fresh cream", "wheat flour", "butter"],
     "price": "850",
@@ -13,22 +13,10 @@
     "carbs": "58G",
     "bgColor": "#ff89c1",
     "sizes": [
-      {
-        "label": "Large",
-        "price": "850"
-      },
-      {
-        "label": "Small",
-        "price": "650"
-      },
-      {
-        "label": "Large-Egg Free",
-        "price": "900"
-      },
-      {
-        "label": "Small- Egg Free",
-        "price": "700"
-      }
+      { "label": "Large", "price": "850" },
+      { "label": "Small", "price": "650" },
+      { "label": "Large-Egg Free", "price": "900" },
+      { "label": "Small- Egg Free", "price": "700" }
     ]
   },
   {
@@ -36,7 +24,7 @@
     "name": "Classic Cookie",
     "category": "Deserts",
     "isNew": false,
-    "image": "/cookie.png",
+    "image": "/food/cookie.png",
     "description": "Crunchy, golden-brown cookies packed with chocolate chips.",
     "ingredients": [
       "Wheat flour",
@@ -55,7 +43,7 @@
     "name": "Chocolate Donut",
     "category": "donuts",
     "isNew": true,
-    "image": "/donut1.png",
+    "image": "/food/donut1.png",
     "description": "Soft, fluffy donut dipped in a thick layer of melted milk chocolate.",
     "ingredients": ["Refined flour", "milk chocolate glaze", "yeast", "butter"],
     "price": "95",
@@ -69,7 +57,7 @@
     "name": "Aloo Patties",
     "category": "snacks",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950",
+    "image": "/food/aalu-puff.png",
     "description": "Crispy, multilayered 'Pettis' filled with spicy potato masala.",
     "ingredients": [
       "Puff pastry",
@@ -88,7 +76,7 @@
     "name": "Vanilla Cupcake",
     "category": "cupcakes",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd",
+    "image": "/food/vanilla-cup-cake.png",
     "description": "Classic vanilla sponge topped with a light buttercream swirl.",
     "ingredients": ["Refined flour", "vanilla bean", "buttercream", "milk"],
     "price": "45",
@@ -102,7 +90,7 @@
     "name": "Paneer Patties",
     "category": "snacks",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1626132646529-500637532537",
+    "image": "/food/paneer-puff.png",
     "description": "A premium savory puff filled with spicy crumbled paneer.",
     "ingredients": ["Flaky puff dough", "fresh paneer", "green peas", "spices"],
     "price": "40",
@@ -116,7 +104,7 @@
     "name": "Whole Wheat Bread",
     "category": "Breads",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff",
+    "image": "/food/whole-wheat-bread.png",
     "description": "Freshly baked healthy brown bread, perfect for sandwiches.",
     "ingredients": ["Whole wheat flour", "yeast", "honey", "water", "salt"],
     "price": "50",
@@ -130,7 +118,7 @@
     "name": "Red Velvet Pastry",
     "category": "cakes&pastry",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1586788680434-30d324b2d46f",
+    "image": "/food/red-velvet-cake.png",
     "description": "Creamy cocoa-infused red velvet sponge with cream cheese frosting.",
     "ingredients": ["Cocoa", "beetroot juice", "cream cheese", "flour"],
     "price": "120",
@@ -144,7 +132,7 @@
     "name": "Strawberry Donut",
     "category": "donuts",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1612240498936-65f5101365d2",
+    "image": "/food/strawberry-donut.png",
     "description": "Pink glazed donut topped with colorful sugar strands.",
     "ingredients": ["Flour", "strawberry glaze", "sprinkles", "sugar"],
     "price": "85",
@@ -158,7 +146,7 @@
     "name": "Garlic Bread Sticks",
     "category": "Breads",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1600271886332-699bb2798bca",
+    "image": "/food/garlic-bread-stick.png",
     "description": "Soft dough sticks brushed with garlic butter and herbs.",
     "ingredients": ["All-purpose flour", "garlic butter", "oregano", "yeast"],
     "price": "110",
@@ -172,7 +160,7 @@
     "name": "Veg Sandwich",
     "category": "snacks",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1521390188846-e2a39973e847",
+    "image": "/food/veg-sandwitch.png",
     "description": "Classic double-decker sandwich with fresh veggies and mint chutney.",
     "ingredients": ["Bread slices", "cucumber", "tomato", "mint chutney"],
     "price": "65",
@@ -186,7 +174,7 @@
     "name": "Blueberry Cupcake",
     "category": "cupcakes",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1614707267537-b85af00c4b81",
+    "image": "/food/blueberry-cup-cake.png",
     "description": "Zesty blueberry sponge with real fruit bits and berry frosting.",
     "ingredients": ["Blueberries", "butter", "sugar", "cake flour"],
     "price": "55",
@@ -200,7 +188,7 @@
     "name": "Pineapple Cake",
     "category": "cakes&pastry",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1535141192574-5d4897c12636",
+    "image": "/food/pine-apple-cake.png",
     "description": "Tropical delight with layers of pineapple and whipped cream.",
     "ingredients": ["Pineapple chunks", "whipped cream", "sponge", "cherry"],
     "price": "750",
@@ -209,22 +197,10 @@
     "carbs": "52G",
     "bgColor": "#fff3b0",
     "sizes": [
-      {
-        "label": "Large",
-        "price": "750"
-      },
-      {
-        "label": "Small",
-        "price": "550"
-      },
-      {
-        "label": "Large-Egg Free",
-        "price": "800"
-      },
-      {
-        "label": "Small- Egg Free",
-        "price": "600"
-      }
+      { "label": "Large", "price": "750" },
+      { "label": "Small", "price": "550" },
+      { "label": "Large-Egg Free", "price": "800" },
+      { "label": "Small- Egg Free", "price": "600" }
     ]
   },
   {
@@ -232,7 +208,7 @@
     "name": "Fudge Brownie",
     "category": "Deserts",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735",
+    "image": "/food/fudgebrownie.png",
     "description": "Gooey, extra-dark chocolate brownie topped with walnuts.",
     "ingredients": ["Dark chocolate", "walnuts", "cocoa powder", "eggs"],
     "price": "90",
@@ -246,7 +222,7 @@
     "name": "Milk Bread",
     "category": "Breads",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1598373182133-52452f7691ef",
+    "image": "/food/milk-bread.png",
     "description": "Super soft, sweet milk bread for everyday breakfast.",
     "ingredients": ["Milk", "refined flour", "yeast", "butter"],
     "price": "45",
@@ -260,7 +236,7 @@
     "name": "Glazed Donut",
     "category": "donuts",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac",
+    "image": "/food/glazed-donut.png",
     "description": "The timeless classic donut with a simple sugar glaze.",
     "ingredients": ["Flour", "sugar glaze", "vanilla", "milk"],
     "price": "70",
@@ -274,7 +250,7 @@
     "name": "Chicken Puff",
     "category": "snacks",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1628191139360-408306cd95b2",
+    "image": "/food/chicken-puf.png",
     "description": "Flaky pastry stuffed with seasoned shredded chicken.",
     "ingredients": ["Puff dough", "chicken", "onions", "black pepper"],
     "price": "55",
@@ -288,7 +264,7 @@
     "name": "Black Forest Pastry",
     "category": "cakes&pastry",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c",
+    "image": "/food/black-forest.png",
     "description": "Chocolate layers with cherries and snow-white cream.",
     "ingredients": ["Chocolate sponge", "cherries", "cream", "flakes"],
     "price": "95",
@@ -302,7 +278,7 @@
     "name": "Oatmeal Cookie",
     "category": "Deserts",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35",
+    "image": "/food/oatmeal-cookie.png",
     "description": "Healthy oatmeal cookies with raisins and a hint of cinnamon.",
     "ingredients": ["Oats", "raisins", "cinnamon", "honey"],
     "price": "50",
@@ -316,7 +292,7 @@
     "name": "Multigrain Bread",
     "category": "Breads",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1555951015-6da899b5c2cd",
+    "image": "/food/multi-grain-bread.png",
     "description": "Nutrient-rich bread topped with pumpkin and flax seeds.",
     "ingredients": ["Multigrain flour", "seeds", "oats", "molasses"],
     "price": "75",
@@ -330,7 +306,7 @@
     "name": "Caramel Donut",
     "category": "donuts",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307",
+    "image": "/food/caramel-donut.png",
     "description": "Rich caramel filled donut with a salted caramel drizzle.",
     "ingredients": ["Flour", "caramel", "sea salt", "butter"],
     "price": "110",
@@ -344,7 +320,7 @@
     "name": "Samosa",
     "category": "snacks",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950",
+    "image": "/food/samosa.png",
     "description": "The king of Indian snacks - fried pastry with potato filling.",
     "ingredients": ["Maida", "potatoes", "peas", "spices"],
     "price": "15",
@@ -358,7 +334,7 @@
     "name": "Fruit Cake",
     "category": "cakes&pastry",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13",
+    "image": "/food/fruit-cake.png",
     "description": "Traditional loaf cake loaded with candied fruits and nuts.",
     "ingredients": ["Dried fruits", "butter", "sugar", "mixed peel"],
     "price": "450",
@@ -367,22 +343,10 @@
     "carbs": "45G",
     "bgColor": "#fdf0d5",
     "sizes": [
-      {
-        "label": "Large",
-        "price": "450"
-      },
-      {
-        "label": "Small",
-        "price": "250"
-      },
-      {
-        "label": "Large-Egg Free",
-        "price": "500"
-      },
-      {
-        "label": "Small- Egg Free",
-        "price": "300"
-      }
+      { "label": "Large", "price": "450" },
+      { "label": "Small", "price": "250" },
+      { "label": "Large-Egg Free", "price": "500" },
+      { "label": "Small- Egg Free", "price": "300" }
     ]
   },
   {
@@ -390,7 +354,7 @@
     "name": "Red Velvet Cupcake",
     "category": "cupcakes",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1614707267537-b85af00c4b81",
+    "image": "/food/red-velvet-cup-cake.png",
     "description": "Mini red velvet treat with a swirl of cream cheese.",
     "ingredients": ["Buttermilk", "cocoa", "vinegar", "cream cheese"],
     "price": "60",
@@ -404,7 +368,7 @@
     "name": "French Baguette",
     "category": "Breads",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1585478259715-876a6a81fc08",
+    "image": "/food/french-bread.png",
     "description": "Crispy crust and soft airy interior, baked daily.",
     "ingredients": ["Flour", "water", "salt", "yeast"],
     "price": "80",
@@ -418,7 +382,7 @@
     "name": "Apple Pie",
     "category": "Deserts",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2",
+    "image": "/food/apple-pie.png",
     "description": "Warm cinnamon apples tucked into a buttery flaky crust.",
     "ingredients": ["Apples", "cinnamon", "butter", "pastry"],
     "price": "150",
@@ -432,7 +396,7 @@
     "name": "Pista Cake",
     "category": "cakes&pastry",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1550617931-e17a7b70dce2",
+    "image": "/food/pista-cake.png",
     "description": "Light sponge flavored with real roasted pistachios.",
     "ingredients": ["Pistachio", "flour", "green food color", "cream"],
     "price": "900",
@@ -441,22 +405,10 @@
     "carbs": "50G",
     "bgColor": "#d8f3dc",
     "sizes": [
-      {
-        "label": "Large",
-        "price": "900"
-      },
-      {
-        "label": "Small",
-        "price": "700"
-      },
-      {
-        "label": "Large-Egg Free",
-        "price": "950"
-      },
-      {
-        "label": "Small- Egg Free",
-        "price": "750"
-      }
+      { "label": "Large", "price": "900" },
+      { "label": "Small", "price": "700" },
+      { "label": "Large-Egg Free", "price": "950" },
+      { "label": "Small- Egg Free", "price": "750" }
     ]
   },
   {
@@ -464,7 +416,7 @@
     "name": "Chocolate Croissant",
     "category": "Breads",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1530610476181-d83430b64dcd",
+    "image": "/food/chocolate-croissant.png",
     "description": "Flaky, buttery pastry filled with dark chocolate batons.",
     "ingredients": ["Butter", "yeast dough", "dark chocolate"],
     "price": "120",
@@ -478,7 +430,7 @@
     "name": "Tiramisu Cup",
     "category": "Deserts",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9",
+    "image": "/food/tiramisu-cup.png",
     "description": "Coffee-soaked layers with mascarpone and cocoa dusting.",
     "ingredients": ["Coffee", "mascarpone", "ladyfingers", "cocoa"],
     "price": "180",
@@ -492,7 +444,7 @@
     "name": "Veg Burger",
     "category": "snacks",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1550547660-d9450f859349",
+    "image": "/food/veg-burger.png",
     "description": "Crispy veg patty with lettuce, cheese, and mayo.",
     "ingredients": ["Potato patty", "bun", "lettuce", "mayo"],
     "price": "85",
@@ -506,7 +458,7 @@
     "name": "Oreo Donut",
     "category": "donuts",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307",
+    "image": "/food/oreo-donut.png",
     "description": "White chocolate glaze topped with crushed Oreo cookies.",
     "ingredients": ["Flour", "white chocolate", "Oreo crumbs"],
     "price": "100",
@@ -520,7 +472,7 @@
     "name": "Focaccia Bread",
     "category": "Breads",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1598373182133-52452f7691ef",
+    "image": "/food/milk-bread.png",
     "description": "Italian bread topped with rosemary, olives, and olive oil.",
     "ingredients": ["Olive oil", "rosemary", "olives", "sea salt"],
     "price": "130",
@@ -534,7 +486,7 @@
     "name": "Lemon Tart",
     "category": "Deserts",
     "isNew": false,
-    "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13",
+    "image": "/food/lemon-tart.png",
     "description": "Zesty lemon curd in a shortcrust pastry shell.",
     "ingredients": ["Lemon", "eggs", "sugar", "shortcrust"],
     "price": "110",
@@ -548,7 +500,7 @@
     "name": "Cheese Chili Toast",
     "category": "snacks",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8",
+    "image": "/food/cheese-chilli-toast.png",
     "description": "Toasted bread with melted cheese and green chilies.",
     "ingredients": ["Bread", "cheese", "green chili", "butter"],
     "price": "75",
@@ -562,7 +514,7 @@
     "name": "Bento Cake",
     "category": "cakes&pastry",
     "isNew": true,
-    "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587",
+    "image": "/food/bento-cake.png",
     "description": "Trendy mini cake for one, perfectly decorated in a box.",
     "ingredients": ["Sponge", "buttercream", "sprinkles", "love"],
     "price": "250",
@@ -571,22 +523,10 @@
     "carbs": "38G",
     "bgColor": "#ffccd5",
     "sizes": [
-      {
-        "label": "Large",
-        "price": "250"
-      },
-      {
-        "label": "Small",
-        "price": "50"
-      },
-      {
-        "label": "Large-Egg Free",
-        "price": "300"
-      },
-      {
-        "label": "Small- Egg Free",
-        "price": "100"
-      }
+      { "label": "Large", "price": "250" },
+      { "label": "Small", "price": "50" },
+      { "label": "Large-Egg Free", "price": "300" },
+      { "label": "Small- Egg Free", "price": "100" }
     ]
   }
 ]
