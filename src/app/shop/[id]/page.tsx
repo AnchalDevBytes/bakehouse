@@ -74,7 +74,7 @@ export default async function ProductDetailPage({
               </div>
             </div>
 
-            <AddToCartForm basePrice={product.price} sizes={product.sizes} />
+            <AddToCartForm product={product} />
 
             <div className="flex flex-col border-t-[3px] border-black/10 pt-8 gap-8">
               <div className="flex flex-col gap-4">

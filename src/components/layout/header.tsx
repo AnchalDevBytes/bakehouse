@@ -5,16 +5,27 @@ import { motion, AnimatePresence } from "motion/react";
 import Button from "@/components/ui/Button";
 import { usePathname } from "next/navigation";
 import { RiMenu4Line, RiCloseLine } from "react-icons/ri";
+import { useCartStore } from "@/store/useCartStore";
+import { useEffect } from "react";
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Shop", href: "/shop" },
+  { name: "Orders", href: "/orders" },
   { name: "Cart", href: "/cart" },
 ];
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const items = useCartStore((state) => state.items);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const cartCount = items.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 p-6 backdrop-blur-md bg-[#fdfcfb]/80 border-b-2 border-transparent hover:border-black/5 transition-all">
@@ -34,7 +45,14 @@ export function Header() {
                 href={item.href}
                 variant={isActive ? "yellow" : "white"}
               >
-                {item.name}
+                <div className="flex items-center gap-2">
+                  {item.name}
+                  {item.name === "Cart" && mounted && cartCount > 0 && (
+                    <span className="bg-[#ff3d3d] text-white min-w-[24px] h-6 rounded-full flex items-center justify-center text-xs border-2 border-black shadow-neo-sm">
+                      {cartCount}
+                    </span>
+                  )}
+                </div>
               </Button>
             );
           })}
@@ -72,7 +90,14 @@ export function Header() {
                   className="w-full text-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item.name}
+                  <div className="flex items-center justify-center gap-2">
+                    {item.name}
+                    {item.name === "Cart" && mounted && cartCount > 0 && (
+                      <span className="bg-[#ff3d3d] text-white min-w-[24px] h-6 rounded-full flex items-center justify-center text-xs border-2 border-black shadow-neo-sm">
+                        {cartCount}
+                      </span>
+                    )}
+                  </div>
                 </Button>
               );
             })}

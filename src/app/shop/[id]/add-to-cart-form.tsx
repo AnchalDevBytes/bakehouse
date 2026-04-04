@@ -1,43 +1,65 @@
 "use client";
 
 import { useState } from "react";
+import { useCartStore } from "@/store/useCartStore";
+import { motion, AnimatePresence } from "motion/react";
 
 export type SizeVariant = {
   label: string;
   price: string;
 };
 
-export interface AddToCartProps {
-  basePrice: string;
+export interface Product {
+  id: number;
+  name: string;
+  image: string;
+  price: string;
   sizes?: SizeVariant[];
 }
 
-export default function AddToCartForm({ basePrice, sizes }: AddToCartProps) {
-  const [quantity, setQuantity] = useState(1);
+export interface AddToCartProps {
+  product: Product;
+}
+
+export default function AddToCartForm({ product }: AddToCartProps) {
+  const [showToast, setShowToast] = useState(false);
+  const addItem = useCartStore((state) => state.addItem);
+
   const [selectedSize, setSelectedSize] = useState<SizeVariant | null>(
-    sizes && sizes.length > 0 ? sizes[0] : null,
+    product.sizes && product.sizes.length > 0 ? product.sizes[0] : null,
   );
 
-  const currentPrice = selectedSize ? selectedSize.price : basePrice;
-  const totalPrice = (parseFloat(currentPrice) * quantity).toFixed(2);
+  const currentPrice = selectedSize ? selectedSize.price : product.price;
 
-  const increment = () => setQuantity((q) => q + 1);
-  const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
+  const handleAddToCart = () => {
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: currentPrice,
+      quantity: 1,
+      size: selectedSize?.label,
+      image: product.image,
+    });
+
+    // Show Neo-Brutalist toast
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2000);
+  };
 
   return (
     <div className="flex flex-col gap-8 w-full mt-2">
       <div className="flex flex-col gap-6">
         <h2 className="text-3xl md:text-4xl font-source-serif text-[#1a1a1a]">
-          Rs. {totalPrice}
+          Rs. {parseFloat(currentPrice).toFixed(2)}
         </h2>
 
-        {sizes && sizes.length > 0 && (
+        {product.sizes && product.sizes.length > 0 && (
           <div className="flex flex-col gap-3">
             <span className="text-xs font-bold uppercase tracking-widest text-[#1a1a1a]">
               Select
             </span>
             <div className="flex flex-wrap gap-2">
-              {sizes.map((size) => {
+              {product.sizes.map((size) => {
                 const isSelected = selectedSize?.label === size.label;
                 return (
                   <button
@@ -60,32 +82,29 @@ export default function AddToCartForm({ basePrice, sizes }: AddToCartProps) {
       </div>
 
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
-        {/* Quantity */}
-        <div className="flex items-center bg-[#f5f5f5] rounded-full px-2 h-14 shrink-0 shadow-inner">
-          <button
-            type="button"
-            onClick={decrement}
-            className="w-10 h-10 flex items-center justify-center text-2xl text-black/60 hover:text-black transition-colors"
-          >
-            &minus;
-          </button>
-          <span className="min-w-8 text-center font-bold text-lg font-figtree">
-            {quantity}
-          </span>
-          <button
-            type="button"
-            onClick={increment}
-            className="w-10 h-10 flex items-center justify-center text-2xl text-black/60 hover:text-black transition-colors"
-          >
-            &#43;
-          </button>
-        </div>
-
-        {/* Add to Cart */}
-        <button className="flex-1 w-full h-14 bg-white text-black border border-black text-sm font-bold uppercase tracking-[0.2em] rounded-2xl shadow-neo-sm hover:-translate-y-1 hover:shadow-neo transition-all">
+        <button
+          onClick={handleAddToCart}
+          className="flex-1 w-full h-14 bg-white text-black border border-black text-sm font-bold uppercase tracking-[0.2em] rounded-2xl shadow-neo-sm hover:-translate-y-1 hover:shadow-neo transition-all"
+        >
           Add To Cart
         </button>
       </div>
+
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            className="fixed bottom-10 right-10 z-50 bg-[#ffc65d] border-2 border-black p-4 px-6 rounded-xl shadow-neo font-bold flex items-center gap-3"
+          >
+            <div className="w-6 h-6 bg-green-400 border border-black flex items-center justify-center text-xs">
+              ✓
+            </div>
+            <span>Added to your basket!</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
