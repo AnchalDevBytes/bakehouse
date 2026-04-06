@@ -3,7 +3,8 @@ import { Link } from "next-view-transitions";
 import { notFound } from "next/navigation";
 import { HiArrowLeft } from "react-icons/hi2";
 import productsData from "@/helpers/data.json";
-import AddToCartForm from "./add-to-cart-form";
+import AddToCartForm from "@/app/shop/[id]/add-to-cart-form";
+import CategoryPreview from "@/components/sections/category-preview";
 
 export async function generateStaticParams() {
   return productsData.map((product) => ({
@@ -25,15 +26,19 @@ export default async function ProductDetailPage({
     notFound();
   }
 
+  const relatedProducts = productsData
+    .filter((p) => p.category === product.category && p.id !== product.id)
+    .slice(0, 4);
+
   return (
-    <main className="min-h-screen bg-[#fdfcfb] pt-32 pb-24">
+    <main className="min-h-screen bg-[#fdfcfb] pt-32">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Back Navigation */}
         <Link
           href={`/shop?category=${product.category}`}
-          className="inline-flex items-center gap-2 mb-12 text-black hover:opacity-70 transition-opacity font-medium uppercase tracking-widest text-sm"
+          className="inline-flex items-center gap-2 mb-8 text-black/40 hover:text-black transition-colors font-bold uppercase tracking-widest text-xs"
         >
-          <HiArrowLeft size={20} /> Back to {product.category}
+          <HiArrowLeft size={16} /> Back to {product.category}
         </Link>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-start">
@@ -55,6 +60,9 @@ export default async function ProductDetailPage({
 
           <div className="flex flex-col gap-8 py-4 font-figtree">
             <div className="flex flex-col gap-4">
+              <span className="text-xs font-black uppercase tracking-[0.3em] text-black/20 -mb-2">
+                Artisan Selection
+              </span>
               <h1 className="text-3xl md:text-5xl font-source-serif text-[#1a1a1a] uppercase leading-none">
                 {product.name}
               </h1>
@@ -85,6 +93,22 @@ export default async function ProductDetailPage({
             </div>
           </div>
         </div>
+      </div>
+
+      <div>
+        {relatedProducts.length > 0 && (
+          <section className="py:10 md:py-20 px-2 lg:px-20 overflow-hidden">
+            <div className="max-w-7xl mx-auto">
+              <CategoryPreview
+                title="You May Also Like"
+                categoryId={product.category}
+                products={relatedProducts}
+                cardType="minimal"
+                gridCols="grid grid-cols-2 lg:grid-cols-4 gap-12"
+              />
+            </div>
+          </section>
+        )}
       </div>
     </main>
   );

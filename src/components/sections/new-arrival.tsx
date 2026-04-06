@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi2";
-import ProductCard from "@/components/sections/product-card";
+import CardStandard from "../cards/card-standard";
 import products from "@/helpers/data.json";
 
 const NewArrivals = () => {
@@ -57,9 +57,12 @@ const NewArrivals = () => {
   const newArrivals = products.filter((product) => product.isNew).slice(0, 10);
 
   return (
-    <section className="flex flex-col gap-12 sm:gap-20 px-0 sm:px-6 lg:px-0 py-10 lg:py-20">
-      <div className="flex items-center justify-center gap-6 px-4 md:px-20 w-full min-w-0">
-        <h4 className="text-3xl sm:text-4xl md:text-5xl font-source-serif text-black leading-tight">
+    <section className="flex flex-col gap-12 sm:gap-16 py-16 px-0">
+      <div className="flex flex-col items-center gap-2 text-center w-full max-w-7xl mx-auto">
+        <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#f1b434]">
+          Discovery
+        </span>
+        <h4 className="text-3xl md:text-4xl font-source-serif text-[#2a1b15] leading-none">
           New Arrivals
         </h4>
       </div>
@@ -69,14 +72,14 @@ const NewArrivals = () => {
         onScroll={handleScroll}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="flex overflow-x-auto overflow-y-hidden lg:overflow-x-hidden gap-4 lg:gap-6 no-scrollbar px-4 md:px-20"
+        className="flex overflow-x-auto overflow-y-hidden lg:overflow-x-hidden gap-4 lg:gap-0 no-scrollbar px-4 md:px-20"
       >
         {newArrivals.map((product) => (
           <div
             key={product.id}
             className="shrink-0 w-[280px] sm:w-[320px] lg:w-[380px] flex items-center justify-center"
           >
-            <ProductCard
+            <CardStandard
               id={product.id}
               name={product.name}
               image={product.image}
@@ -85,7 +88,6 @@ const NewArrivals = () => {
               calories={product.calories}
               protein={product.protein}
               bgColor={product.bgColor}
-              hideFooterOnMobile={true}
             />
           </div>
         ))}
@@ -102,9 +104,9 @@ const NewArrivals = () => {
             <HiArrowLeft size={24} />
           </button>
 
-          <div className="flex-1 h-[2px] bg-gray-100 relative rounded-full overflow-hidden">
+          <div className="flex-1 h-[2px] bg-black/5 relative rounded-full overflow-hidden">
             <div
-              className="absolute left-0 top-0 h-full bg-[#1b4b36] transition-all duration-300 ease-out"
+              className="absolute left-0 top-0 h-full bg-[#f1b434] transition-all duration-300 ease-out"
               style={{ width: `${scrollProgress}%` }}
             />
           </div>

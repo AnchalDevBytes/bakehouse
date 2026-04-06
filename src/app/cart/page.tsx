@@ -8,9 +8,12 @@ import {
   HiPlus,
   HiMinus,
   HiTrash,
-  HiArrowLeft,
   HiCheckCircle,
+  HiShoppingBag,
 } from "react-icons/hi2";
+import PageHero from "@/components/ui/page-hero";
+import { AnimationWrapper } from "@/components/ui/animation-wrapper";
+import { cn } from "@/lib/utils";
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, checkout } = useCartStore();
@@ -33,7 +36,6 @@ export default function CartPage() {
 
   const handleCheckout = async () => {
     setIsCheckingOut(true);
-    // payment processing
     await new Promise((resolve) => setTimeout(resolve, 2000));
     checkout();
     setIsCheckingOut(false);
@@ -42,221 +44,241 @@ export default function CartPage() {
 
   if (orderSuccess) {
     return (
-      <main className="bg-[#fdfcfb] pt-32 pb-24 flex items-center justify-center">
-        <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          className="max-w-xl w-full bg-[#fff3da] border-2 border-black p-4 md:p-8 rounded-[40px] shadow-neo-lg text-center flex flex-col gap-10 mx-4 relative overflow-hidden"
-        >
-          {/* Success Icon & Header */}
-          <div className="flex flex-col items-center gap-6 relative z-10">
-            <div className="w-12 h-12 bg-green-500 rounded-full border-2 border-black flex items-center justify-center shadow-neo-sm animate-bounce">
-              <HiCheckCircle size={32} className="text-black" />
+      <main className="min-h-screen bg-[#fdfcfb] pt-36 pb-24 flex items-center justify-center px-6">
+        <AnimationWrapper animation="scaleIn" className="max-w-xl w-full">
+          <div className="bg-[#fff3da] border-2 border-black p-8 md:p-12 rounded-[40px] shadow-neo text-center flex flex-col gap-8 relative overflow-hidden">
+            <div className="flex flex-col items-center gap-6 relative z-10">
+              <div className="w-16 h-16 bg-green-500 rounded-full border-2 border-black flex items-center justify-center shadow-neo-sm">
+                <HiCheckCircle size={32} className="text-black" />
+              </div>
+              <div className="flex flex-col gap-3">
+                <h1 className="text-2xl md:text-4xl font-source-serif text-[#1a1a1a] uppercase leading-none tracking-tight">
+                  Sweet <br /> Success!
+                </h1>
+                <p className="text-lg font-source-serif italic text-black/40">
+                  Your artisan treats are being prepared...
+                </p>
+              </div>
             </div>
-            <div className="flex flex-col gap-2">
-              <h1 className="text-3xl md:text-4xl font-source-serif text-[#1a1a1a] uppercase leading-none">
-                Order <br /> Confirmed!
-              </h1>
-              <p className="text-lg md:text-xl font-source-serif italic text-black/60">
-                Your delicious treats are being prepared...
+
+            <div className="bg-white border border-black rounded-[24px] p-6 flex flex-col gap-6 shadow-neo-sm relative">
+              <div className="flex justify-between items-center border-b border-black border-dashed pb-3 text-[10px] font-black uppercase tracking-[0.2em] text-black/20">
+                <span>
+                  Receipt #BK-{Math.floor(Math.random() * 900000) + 100000}
+                </span>
+                <span>
+                  {new Date().toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "short",
+                  })}
+                </span>
+              </div>
+              <p className="text-base font-bold text-left leading-relaxed text-black/70">
+                Thank you for choosing Bakehouse. Your order has been added to
+                your history. We'll start baking shortly!
               </p>
             </div>
-          </div>
 
-          {/* Summary */}
-          <div className="bg-white border border-black rounded-3xl p-6 md:p-8 flex flex-col gap-6 shadow-neo relative">
-            <div className="flex justify-between items-center border-b-2 border-black border-dashed pb-4 text-sm font-medium uppercase tracking-widest text-black/40">
-              <span>
-                Receipt #BK-{Math.floor(Math.random() * 900000) + 100000}
-              </span>
-              <span>
-                {new Date().toLocaleDateString("en-GB", {
-                  day: "numeric",
-                  month: "short",
-                })}
-              </span>
+            <div className="flex gap-3 z-10">
+              <Link
+                href="/orders"
+                className="flex-1 py-4 bg-black text-white border border-black rounded-xl text-lg font-bold uppercase tracking-widest shadow-neo-sm hover:-translate-y-0.5 transition-all"
+              >
+                Track Orders
+              </Link>
+              <Link
+                href="/shop"
+                className="flex-1 py-4 bg-white text-black border border-black rounded-xl text-lg font-bold uppercase tracking-widest shadow-neo-sm hover:-translate-y-0.5 transition-all"
+              >
+                Keep Shopping
+              </Link>
             </div>
-
-            <p className="text-sm md:text-lg font-bold text-left leading-relaxed">
-              Thank you for choosing Bakehouse. Your order has been received and
-              added to your history. We'll start baking shortly!
-            </p>
           </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 relative z-10">
-            <Link
-              href="/orders"
-              className="flex-1 py-4 bg-black text-white border-4 border-black rounded-2xl text-xl font-bold uppercase tracking-widest shadow-neo hover:-translate-y-1 transition-all"
-            >
-              Track Orders
-            </Link>
-            <Link
-              href="/shop"
-              className="flex-1 py-4 bg-white text-black border-4 border-black rounded-2xl text-xl font-bold uppercase tracking-widest shadow-neo hover:-translate-y-1 transition-all"
-            >
-              Keep Shopping
-            </Link>
-          </div>
-
-          {/* Decorative Corner */}
-          <div className="absolute top-0 right-0 w-24 h-24 bg-[#ffc65d] border-l-4 border-b-4 border-black -rotate-45 translate-x-12 -translate-y-12" />
-        </motion.div>
+        </AnimationWrapper>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-[#fdfcfb] pt-32 pb-24">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <h1 className="text-4xl md:text-5xl font-source-serif text-black/90 uppercase leading-none mb-12">
-          Your Basket
-        </h1>
-
-        {items.length === 0 ? (
-          <div className="bg-white border-4 border-black p-12 rounded-[40px] shadow-neo text-center flex flex-col gap-8">
-            <p className="text-2xl font-bold text-black/40">
-              Your basket is currently empty.
-            </p>
-            <div className="flex justify-center">
-              <Link
-                href="/shop"
-                className="inline-flex items-center gap-3 py-4 px-8 bg-[#ffc65d] border-2 border-black rounded-2xl text-xl font-bold uppercase tracking-widest shadow-neo hover:-translate-y-1 transition-all"
-              >
-                <HiArrowLeft /> Go To Shop
-              </Link>
-            </div>
+    <main className="min-h-screen bg-[#fdfcfb]">
+      <PageHero
+        title="Your Basket"
+        subtitle="Review your selection and prepare for bliss."
+        breadcrumb={{ label: "Home", href: "/" }}
+      >
+        <div className="hidden md:flex items-center gap-4 bg-white border border-black p-4 rounded-2xl shadow-neo-sm">
+          <HiShoppingBag size={24} className="text-[#f1b434]" />
+          <div className="flex flex-col">
+            <span className="text-xl font-black leading-none">
+              {items.length}
+            </span>
+            <span className="text-[8px] font-black uppercase tracking-widest text-black/30">
+              Items
+            </span>
           </div>
+        </div>
+      </PageHero>
+
+      <div className="container mx-auto px-6 lg:px-20 pb-32 pt-10">
+        {items.length === 0 ? (
+          <AnimationWrapper className="bg-white border-2 border-black p-16 md:p-24 rounded-[40px] shadow-neo-sm text-center flex flex-col items-center gap-8">
+            <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center text-black/5">
+              <HiShoppingBag size={48} />
+            </div>
+            <div className="max-w-md">
+              <h2 className="text-2xl font-source-serif italic text-black/30 mb-2">
+                Your basket is empty
+              </h2>
+              <p className="text-black/40 text-sm font-medium">
+                Looks like you haven't added any treats yet.
+              </p>
+            </div>
+            <Link
+              href="/shop"
+              className="inline-flex items-center gap-3 py-4 px-10 bg-[#f1b434] border border-black rounded-xl text-lg font-bold uppercase tracking-widest shadow-neo-sm hover:-translate-y-0.5 transition-all"
+            >
+              Start Exploring
+            </Link>
+          </AnimationWrapper>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-            {/* Items List */}
-            <div className="lg:col-span-2 flex flex-col gap-6">
-              <AnimatePresence>
-                {items.map((item) => (
-                  <motion.div
-                    key={`${item.id}-${item.size || "default"}`}
-                    layout
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 20 }}
-                    className="flex flex-col sm:flex-row gap-6 p-6 relative overflow-hidden border-b last:border-b-0"
-                  >
-                    <div
-                      className="w-full sm:w-28 h-28 shrink-0 relative rounded-md flex items-center justify-center overflow-hidden"
-                      style={{ backgroundColor: "#f3f4f6" }}
-                    >
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        fill
-                        className="object-contain p-2"
-                      />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-7 flex flex-col gap-6">
+              {items.map((item, idx) => (
+                <div
+                  key={`${item.id}-${item.size || "default"}`}
+                  className="flex flex-col sm:flex-row gap-6 p-6 bg-white border border-black/5 rounded-[32px] shadow-sm transition-all relative overflow-hidden group"
+                >
+                  <div className="w-full sm:w-24 h-24 shrink-0 relative rounded-xl flex items-center justify-center overflow-hidden border border-black/5 bg-[#fdfcfb]">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-contain p-3"
+                    />
+                  </div>
+
+                  <div className="flex-1 flex flex-col justify-between py-1 text-black/70">
+                    <div className="flex justify-between items-start">
+                      <div className="flex flex-col gap-1">
+                        <h3 className="text-lg font-black uppercase tracking-tight leading-none text-black">
+                          {item.name}
+                        </h3>
+                        {item.size && (
+                          <span className="text-[8px] font-black text-[#f1b434] uppercase tracking-[0.2em]">
+                            {item.size} Edition
+                          </span>
+                        )}
+                      </div>
+                      <button
+                        onClick={() => removeItem(item.id, item.size)}
+                        className="p-2 bg-red-50 text-red-500 rounded-lg hover:bg-red-100 transition-colors shrink-0"
+                      >
+                        <HiTrash size={16} />
+                      </button>
                     </div>
 
-                    <div className="flex-1 flex flex-col justify-between py-2">
-                      <div className="flex justify-between items-start">
-                        <div className="flex flex-col gap-1">
-                          <h3 className="text-xl font-bold leading-relaxed">
-                            {item.name}
-                          </h3>
-                          {item.size && (
-                            <span className="text-sm font-bold text-black/40 uppercase tracking-widest">
-                              Size: {item.size}
-                            </span>
-                          )}
-                        </div>
+                    <div className="flex justify-between items-end mt-4">
+                      <div className="flex items-center bg-[#f5f5f5] rounded-xl p-0.5 border border-black/10 h-10">
                         <button
-                          onClick={() => removeItem(item.id, item.size)}
-                          className="p-1 hover:bg-red-50 text-red-500 rounded-xl transition-colors shrink-0"
-                          title="Remove item"
+                          onClick={() =>
+                            updateQuantity(
+                              item.id,
+                              Math.max(1, item.quantity - 1),
+                              item.size,
+                            )
+                          }
+                          className="w-8 h-full flex items-center justify-center text-black/40 hover:text-black"
                         >
-                          <HiTrash size={22} />
+                          <HiMinus />
+                        </button>
+                        <span className="min-w-8 text-center font-black text-sm">
+                          {item.quantity}
+                        </span>
+                        <button
+                          onClick={() =>
+                            updateQuantity(
+                              item.id,
+                              item.quantity + 1,
+                              item.size,
+                            )
+                          }
+                          className="w-8 h-full flex items-center justify-center text-black/40 hover:text-black"
+                        >
+                          <HiPlus />
                         </button>
                       </div>
 
-                      <div className="flex justify-between items-center mt-4">
-                        <div className="flex items-center bg-[#f5f5f5] rounded-full px-2 h-11 shadow-inner border border-black/5">
-                          <button
-                            onClick={() =>
-                              updateQuantity(
-                                item.id,
-                                Math.max(1, item.quantity - 1),
-                                item.size,
-                              )
-                            }
-                            className="w-8 h-8 flex items-center justify-center text-xl text-black/60 hover:text-black transition-colors"
-                          >
-                            <HiMinus />
-                          </button>
-                          <span className="min-w-8 text-center font-bold text-lg font-figtree">
-                            {item.quantity}
-                          </span>
-                          <button
-                            onClick={() =>
-                              updateQuantity(
-                                item.id,
-                                item.quantity + 1,
-                                item.size,
-                              )
-                            }
-                            className="w-8 h-8 flex items-center justify-center text-xl text-black/60 hover:text-black transition-colors"
-                          >
-                            <HiPlus />
-                          </button>
-                        </div>
-
-                        <div className="text-xl font-bold">
-                          Rs.{" "}
-                          {(parseFloat(item.price) * item.quantity).toFixed(2)}
-                        </div>
+                      <div className="text-lg font-black text-black">
+                        Rs.{" "}
+                        {(parseFloat(item.price) * item.quantity).toFixed(2)}
                       </div>
                     </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Summary */}
-            <div className="lg:col-span-1 lg:sticky lg:top-32">
-              <div className="bg-white border border-black p-8 rounded-[40px] shadow-neo flex flex-col gap-8">
-                <h2 className="text-3xl font-source-serif uppercase leading-none border-b-2 border-black pb-4 text-[#1a1a1a]">
-                  Summary
-                </h2>
+            <div className="lg:col-span-5 lg:sticky lg:top-32">
+              <AnimationWrapper
+                animation="fadeUp"
+                delay={0.1}
+                className="bg-white border border-black p-8 rounded-[40px] shadow-neo-sm flex flex-col gap-8"
+              >
+                <div className="flex flex-col gap-1">
+                  <h2 className="text-2xl font-source-serif uppercase leading-none border-b border-black pb-4 text-[#1a1a1a]">
+                    Summary
+                  </h2>
+                </div>
 
-                <div className="flex flex-col gap-4 font-figtree text-lg">
-                  <div className="flex justify-between">
-                    <span className="text-black/50">Subtotal</span>
-                    <span className="font-bold">Rs. {subtotal.toFixed(2)}</span>
+                <div className="flex flex-col gap-4 text-base font-bold">
+                  <div className="flex justify-between items-center text-black/40">
+                    <span className="uppercase tracking-widest text-[10px]">
+                      Subtotal
+                    </span>
+                    <span>Rs. {subtotal.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-black/50">Shipping</span>
-                    <span className="font-bold">Rs. {shipping.toFixed(2)}</span>
+                  <div className="flex justify-between items-center text-green-600">
+                    <span className="text-black/40 uppercase tracking-widest text-[10px]">
+                      Shipping
+                    </span>
+                    <span>
+                      {shipping === 0 ? "FREE" : `Rs. ${shipping.toFixed(2)}`}
+                    </span>
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center text-3xl font-bold border-t-2 border-black pt-6 text-[#1a1a1a]">
-                  <span>Total</span>
+                <div className="flex justify-between items-center text-2xl font-black border-t border-black pt-6 text-[#1a1a1a]">
+                  <span className="uppercase tracking-tighter">Total</span>
                   <span>Rs. {total.toFixed(2)}</span>
                 </div>
 
                 <button
                   onClick={handleCheckout}
                   disabled={isCheckingOut}
-                  className={`w-full py-3 ${isCheckingOut ? "bg-black text-white" : "bg-gray-200"} text-black border-2 border-black rounded-2xl text-lg font-bold uppercase tracking-widest shadow-neo hover:-translate-y-1 hover:shadow-neo transition-all flex items-center justify-center gap-3`}
+                  className={cn(
+                    "w-full py-4 text-lg font-black uppercase tracking-[0.2em] rounded-2xl border border-black shadow-neo hover:shadow-neo-md transition-all flex items-center justify-center gap-3",
+                    isCheckingOut
+                      ? "bg-black text-white"
+                      : "bg-[#f1b434] text-black hover:-translate-y-0.5",
+                  )}
                 >
                   {isCheckingOut ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      <span>Processing...</span>
+                      <span>Processing</span>
                     </>
                   ) : (
-                    <span>Checkout NOW</span>
+                    "Place Order"
                   )}
                 </button>
 
-                <p className="text-xs text-center text-black/40 font-bold uppercase tracking-widest">
-                  Secure Payment Guaranteed
-                </p>
-              </div>
+                <div className="flex items-center justify-center gap-3 text-[8px] font-black uppercase tracking-[0.3em] text-black/10">
+                  <span className="w-6 h-px bg-black/5" />
+                  Secure Checkout
+                  <span className="w-6 h-px bg-black/5" />
+                </div>
+              </AnimationWrapper>
             </div>
           </div>
         )}
