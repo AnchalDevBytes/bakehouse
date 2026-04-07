@@ -5,6 +5,7 @@ import productsData from "@/helpers/data.json";
 import { cn } from "@/lib/utils";
 import CardStandard from "@/components/cards/card-standard";
 import { AnimationWrapper } from "@/components/ui/animation-wrapper";
+import CardMinimal from "@/components/cards/card-minimal";
 
 const categories = [
   { id: "all", label: "All Items" },
@@ -48,7 +49,7 @@ export default function ShopContent() {
     <div className="flex flex-col gap-0 border-t border-black/5">
       {/* Category Filter Section */}
       <div className="bg-[#fdfcfb] px-6 lg:px-20 py-8">
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-1">
           <div className="flex items-center justify-between">
             <h2 className="text-xs font-black uppercase tracking-[0.3em] text-black/20">
               Browse Categories
@@ -83,7 +84,7 @@ export default function ShopContent() {
       </div>
 
       {/* Main Grid Section */}
-      <section className="bg-[#fdfcfb] px-6 lg:px-20 py-16">
+      <section className="bg-[#fdfcfb] px-6 py-12 sm:py-16">
         <div className="max-w-7xl mx-auto">
           <AnimationWrapper className="mb-12">
             <h2 className="text-2xl md:text-3xl font-source-serif font-black uppercase leading-none mb-4">
@@ -95,14 +96,14 @@ export default function ShopContent() {
           </AnimationWrapper>
 
           {filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-12 gap-y-16 place-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-12 gap-y-10 sm:gap-y-16 place-items-center">
               {filteredProducts.map((product, idx) => (
                 <AnimationWrapper
                   key={product.id}
                   delay={idx * 0.02}
                   className="w-full max-w-[400px]"
                 >
-                  <CardStandard
+                  <CardMinimal
                     id={product.id}
                     name={product.name}
                     image={product.image}

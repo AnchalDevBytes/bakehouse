@@ -85,7 +85,10 @@ export default function CategoryPreview({
                 id={product.id}
                 name={product.name}
                 image={product.image}
+                ingredients={product.ingredients}
                 price={product.price}
+                calories={product.calories}
+                protein={product.protein}
                 bgColor={product.bgColor}
               />
             )}

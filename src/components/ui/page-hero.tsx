@@ -23,7 +23,7 @@ const PageHero = ({
 }: PageHeroProps) => {
   return (
     <section
-      className={`relative pt-32 pb-12 px-6 lg:px-20 overflow-hidden ${bgColor} ${className}`}
+      className={`relative pt-28 md:pt-32 pb-12 px-6 lg:px-20 overflow-hidden ${bgColor} ${className}`}
     >
       <div className="max-w-7xl mx-auto w-full flex flex-col gap-6 relative z-10">
         {/* Breadcrumb / Back Link */}
