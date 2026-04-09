@@ -46,7 +46,7 @@ const BakersProcess = () => {
           {steps.map((step, idx) => (
             <AnimationWrapper
               key={idx}
-              delay={idx * 0.1}
+              delay={idx * 0.02}
               className={`p-10 rounded-[40px] border-2 border-black shadow-neo hover:-translate-y-2 transition-all ${step.color}`}
             >
               <div className="w-16 h-16 rounded-2xl bg-white border-2 border-black flex items-center justify-center text-3xl mb-8 shadow-neo-sm">

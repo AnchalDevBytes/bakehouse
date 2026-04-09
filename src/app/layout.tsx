@@ -10,6 +10,7 @@ import "./globals.css";
 import { ViewTransitions } from "next-view-transitions";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import AnnouncementBanner from "@/components/layout/announcement-banner";
 
 const figtree = Figtree({
   variable: "--font-figtree",
@@ -78,7 +79,7 @@ export default function RootLayout({
       className={`${figtree.variable} ${sourceSerif.variable} ${shrikhand.variable} ${greatVibes.variable} ${dancingScript.variable} h-full antialiased`}
       data-scroll-behavior="smooth"
     >
-      <body className="min-h-full flex flex-col">
+      <body>
         <ViewTransitions>
           <Header />
           {children}
