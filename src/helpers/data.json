@@ -24,7 +24,7 @@
     "name": "Classic Cookie",
     "category": "deserts",
     "isNew": false,
-    "image": "/food/cookie.png",
+    "image": "/food/classic-cookie.png",
     "description": "Crunchy, golden-brown cookies packed with chocolate chips.",
     "ingredients": [
       "Wheat flour",
@@ -472,7 +472,7 @@
     "name": "Focaccia Bread",
     "category": "bread",
     "isNew": true,
-    "image": "/food/milk-bread.png",
+    "image": "/food/focaccia-bread.png",
     "description": "Italian bread topped with rosemary, olives, and olive oil.",
     "ingredients": ["Olive oil", "rosemary", "olives", "sea salt"],
     "price": "130",

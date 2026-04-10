@@ -3,7 +3,6 @@ import { useCartStore } from "@/store/useCartStore";
 import Image from "next/image";
 import { Link } from "next-view-transitions";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
 import {
   HiPlus,
   HiMinus,
@@ -79,16 +78,16 @@ export default function CartPage() {
               </p>
             </div>
 
-            <div className="flex gap-3 z-10">
+            <div className="flex flex-col gap-3 z-10">
               <Link
                 href="/orders"
-                className="flex-1 py-4 bg-black text-white border border-black rounded-xl text-lg font-bold uppercase tracking-widest shadow-neo-sm hover:-translate-y-0.5 transition-all"
+                className="flex-1 py-4 bg-black text-white border border-black rounded-xl text-xs sm:text-lg font-bold uppercase tracking-widest shadow-neo-sm hover:-translate-y-0.5 transition-all"
               >
                 Track Orders
               </Link>
               <Link
                 href="/shop"
-                className="flex-1 py-4 bg-white text-black border border-black rounded-xl text-lg font-bold uppercase tracking-widest shadow-neo-sm hover:-translate-y-0.5 transition-all"
+                className="flex-1 py-4 bg-white text-black border border-black rounded-xl text-xs sm:text-lg font-bold uppercase tracking-widest shadow-neo-sm hover:-translate-y-0.5 transition-all"
               >
                 Keep Shopping
               </Link>
@@ -119,7 +118,7 @@ export default function CartPage() {
         </div>
       </PageHero>
 
-      <div className="container mx-auto px-6 lg:px-20 pb-32 pt-10">
+      <div className="container mx-auto px-3 md:px-20 pb-32 pt-10">
         {items.length === 0 ? (
           <AnimationWrapper className="bg-white border-2 border-black p-16 md:p-24 rounded-[40px] shadow-neo-sm text-center flex flex-col items-center gap-8">
             <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center text-black/5">
@@ -135,7 +134,7 @@ export default function CartPage() {
             </div>
             <Link
               href="/shop"
-              className="inline-flex items-center gap-3 py-4 px-10 bg-[#f1b434] border border-black rounded-xl text-lg font-bold uppercase tracking-widest shadow-neo-sm hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center gap-3 py-4 px-10 bg-[#f1b434] border border-black rounded-xl text-xs sm:text-lg font-bold uppercase tracking-widest shadow-neo-sm hover:-translate-y-0.5 transition-all text-nowrap"
             >
               Start Exploring
             </Link>
@@ -146,9 +145,9 @@ export default function CartPage() {
               {items.map((item, idx) => (
                 <div
                   key={`${item.id}-${item.size || "default"}`}
-                  className="flex flex-col sm:flex-row gap-6 p-6 bg-white border border-black/5 rounded-[32px] shadow-sm transition-all relative overflow-hidden group"
+                  className="flex gap-6 p-6 bg-white border border-black/5 rounded-[32px] shadow-sm transition-all relative overflow-hidden group"
                 >
-                  <div className="w-full sm:w-24 h-24 shrink-0 relative rounded-xl flex items-center justify-center overflow-hidden border border-black/5 bg-[#fdfcfb]">
+                  <div className="w-16 h-auto sm:w-24 sm:h-24 shrink-0 relative rounded-xl flex items-center justify-center overflow-hidden border border-black/5 bg-[#fdfcfb]">
                     <Image
                       src={item.image}
                       alt={item.name}
@@ -160,7 +159,7 @@ export default function CartPage() {
                   <div className="flex-1 flex flex-col justify-between py-1 text-black/70">
                     <div className="flex justify-between items-start">
                       <div className="flex flex-col gap-1">
-                        <h3 className="text-lg font-black uppercase tracking-tight leading-none text-black">
+                        <h3 className="text-xs sm:text-lg font-black uppercase tracking-tight leading-none text-black">
                           {item.name}
                         </h3>
                         {item.size && (
@@ -177,7 +176,7 @@ export default function CartPage() {
                       </button>
                     </div>
 
-                    <div className="flex justify-between items-end mt-4">
+                    <div className="flex justify-between items-end mt-2 sm:mt-4">
                       <div className="flex items-center bg-[#f5f5f5] rounded-xl p-0.5 border border-black/10 h-10">
                         <button
                           onClick={() =>
@@ -208,7 +207,7 @@ export default function CartPage() {
                         </button>
                       </div>
 
-                      <div className="text-lg font-black text-black">
+                      <div className="text-xs sm:text-lg font-black text-black">
                         Rs.{" "}
                         {(parseFloat(item.price) * item.quantity).toFixed(2)}
                       </div>
@@ -273,7 +272,7 @@ export default function CartPage() {
                   )}
                 </button>
 
-                <div className="flex items-center justify-center gap-3 text-[8px] font-black uppercase tracking-[0.3em] text-black/10">
+                <div className="flex items-center justify-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] text-black/10">
                   <span className="w-6 h-px bg-black/5" />
                   Secure Checkout
                   <span className="w-6 h-px bg-black/5" />

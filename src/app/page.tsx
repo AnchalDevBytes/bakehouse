@@ -6,7 +6,7 @@ import FaqSection from "@/components/sections/faq-section";
 
 const HomePage = () => {
   return (
-    <main className="min-h-screen mb-20">
+    <main className="min-h-screen">
       <HeroSection />
       <NewArrivals />
       <OurStories />

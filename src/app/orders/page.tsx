@@ -54,7 +54,7 @@ export default function OrdersPage() {
         </div>
       </PageHero>
 
-      <div className="container mx-auto px-6 lg:px-20 pb-32">
+      <div className="container mx-auto px-3 md:px-20 pb-32">
         {orderHistory.length === 0 ? (
           <AnimationWrapper className="bg-white border-2 border-black p-16 md:p-24 rounded-[40px] shadow-neo-sm text-center flex flex-col items-center gap-8">
             <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center text-black/5">
