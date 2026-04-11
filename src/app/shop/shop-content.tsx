@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import productsData from "@/helpers/data.json";
 import { cn } from "@/lib/utils";
-import CardStandard from "@/components/cards/card-standard";
 import { AnimationWrapper } from "@/components/ui/animation-wrapper";
 import CardMinimal from "@/components/cards/card-minimal";
 
@@ -48,8 +47,8 @@ export default function ShopContent() {
   return (
     <div className="flex flex-col gap-0 border-t border-black/5">
       {/* Category Filter Section */}
-      <div className="bg-[#fdfcfb] px-6 lg:px-20 py-8">
-        <div className="flex flex-col gap-1">
+      <div className="bg-[#fdfcfb] px-6 py-8">
+        <div className="flex flex-col gap-1 max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
             <h2 className="text-xs font-black uppercase tracking-[0.3em] text-black/20">
               Browse Categories
@@ -57,7 +56,7 @@ export default function ShopContent() {
             {activeCategory !== "all" && (
               <button
                 onClick={() => handleCategoryChange("all")}
-                className="text-lg underline underline-offset-4 decoration-2 font-bold hover:text-gray-500"
+                className="text-sm sm:text-lg underline underline-offset-4 decoration-2 font-bold hover:text-gray-500"
               >
                 Clear Filter
               </button>

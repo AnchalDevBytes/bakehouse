@@ -61,22 +61,22 @@ export default function OrdersPage() {
               <HiShoppingBag size={48} />
             </div>
             <div className="max-w-md">
-              <h2 className="text-2xl font-source-serif italic text-black/30 mb-2">
+              <h2 className="text-xl sm:text-2xl font-source-serif italic text-black/30 mb-2">
                 No orders yet
               </h2>
-              <p className="text-black/40 text-sm font-medium">
+              <p className="text-black/40 text-xs sm:text-sm font-medium">
                 Your culinary journey starts here.
               </p>
             </div>
             <Link
               href="/shop"
-              className="inline-flex items-center gap-3 py-4 px-10 bg-[#ffc65d] border border-black rounded-xl text-lg font-bold uppercase tracking-widest shadow-neo-sm hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center gap-3 py-4 px-10 bg-[#ffc65d] border border-black rounded-xl text-sm sm:text-lg font-bold uppercase tracking-widest shadow-neo-sm hover:-translate-y-0.5 transition-all text-nowrap"
             >
               Start Ordering
             </Link>
           </AnimationWrapper>
         ) : (
-          <div className="flex flex-col gap-10 max-w-5xl mx-auto">
+          <div className="flex flex-col gap-10 max-w-7xl mx-auto">
             <div className="flex items-center gap-4 mb-4">
               <div className="h-px bg-black/5 flex-1" />
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black/10">
@@ -85,7 +85,7 @@ export default function OrdersPage() {
               <div className="h-px bg-black/5 flex-1" />
             </div>
 
-            {[...orderHistory].reverse().map((order, idx) => (
+            {[...orderHistory].map((order, idx) => (
               <AnimationWrapper
                 key={order.id}
                 delay={idx * 0.05}
@@ -95,7 +95,7 @@ export default function OrdersPage() {
                 <div className="bg-[#fff3da] border-b border-black/5 p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
                   <div className="flex flex-col gap-3">
                     <div className="flex items-center gap-3">
-                      <span className="px-3 py-1 bg-black text-white text-[8px] font-black uppercase tracking-[0.2em] rounded-full">
+                      <span className="px-3 py-1 bg-black text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full">
                         Order #{order.id}
                       </span>
                       <span className="text-[10px] font-black text-black/20 uppercase tracking-widest">
@@ -117,7 +117,7 @@ export default function OrdersPage() {
 
                   <div className="flex items-center gap-6">
                     <div className="flex flex-col items-end gap-1.5">
-                      <span className="text-[8px] font-black uppercase tracking-widest text-black/20">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-black/20">
                         Status
                       </span>
                       <div className="flex items-center gap-2 bg-white border border-black/10 px-4 py-2 rounded-xl">
@@ -136,7 +136,7 @@ export default function OrdersPage() {
                 <div className="p-8 md:p-10 flex flex-col gap-10">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
                     <div className="flex flex-col gap-6">
-                      <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-black/10 border-b border-black/5 pb-3">
+                      <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-black/30 border-b border-black/5 pb-3">
                         The Selection
                       </h4>
                       <div className="flex flex-col gap-4">
@@ -169,28 +169,28 @@ export default function OrdersPage() {
                     </div>
 
                     <div className="flex flex-col gap-6">
-                      <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-black/10 border-b border-black/5 pb-3">
+                      <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-black/30 border-b border-black/5 pb-3">
                         Investment Summary
                       </h4>
                       <div className="flex flex-col gap-4 text-sm font-bold text-black/40">
                         <div className="flex justify-between">
-                          <span className="uppercase tracking-widest text-[10px]">
+                          <span className="uppercase tracking-widest text-xs">
                             Subtotal
                           </span>
-                          <span className="text-black/60">
+                          <span className="text-black/70">
                             Rs. {order.subtotal}
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="uppercase tracking-widest text-[10px]">
+                          <span className="uppercase tracking-widest text-xs">
                             Shipping
                           </span>
-                          <span className="text-black/60">
+                          <span className="text-black/70">
                             Rs. {order.shipping}
                           </span>
                         </div>
                         <div className="flex justify-between items-end pt-5 border-t border-black/10 mt-1 text-black">
-                          <span className="text-[10px] font-black uppercase tracking-[0.2em]">
+                          <span className="text-xs font-black uppercase tracking-[0.2em]">
                             Grand Total
                           </span>
                           <span className="text-2xl font-source-serif font-black leading-none tracking-tighter">

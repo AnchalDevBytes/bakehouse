@@ -1,7 +1,6 @@
 import { Link } from "next-view-transitions";
 import productsData from "@/helpers/data.json";
 import CardStandard from "@/components/cards/card-standard";
-import CardHorizontal from "@/components/cards/card-horizontal";
 import CardMinimal from "@/components/cards/card-minimal";
 
 type Product = (typeof productsData)[0];
@@ -66,17 +65,6 @@ export default function CategoryPreview({
                 price={product.price}
                 calories={product.calories}
                 protein={product.protein}
-                bgColor={product.bgColor}
-              />
-            )}
-            {cardType === "horizontal" && (
-              <CardHorizontal
-                id={product.id}
-                name={product.name}
-                image={product.image}
-                ingredients={product.ingredients}
-                price={product.price}
-                calories={product.calories}
                 bgColor={product.bgColor}
               />
             )}

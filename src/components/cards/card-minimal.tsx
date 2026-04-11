@@ -97,10 +97,13 @@ export default function CardMinimal({
           )}
         </AnimatePresence>
       </div>
-      <div className="text-center">
-        <h5 className="text-sm sm:text-lg font-shrikhand text-[#2a1b15]">
+      <div className="flex text-center justify-between gap-2 w-full px-1">
+        <h5 className="text-xs md:text-lg font-source-serif tracking-tighter text-[#2a1b15]">
           {name}
         </h5>
+        <span className="text-xs md:text-lg font-source-serif tracking-tighter text-[#2a1b15]">
+          ₹{price}
+        </span>
       </div>
     </Link>
   );
